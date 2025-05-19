@@ -1,6 +1,5 @@
 import { createStackNavigator } from '@react-navigation/stack';
 import { AuthorizationView } from '../modules/authorization';
-import { ProductsView } from '../modules/productsList';
 import { ProductView} from "../modules/product";
 import { TabNavigation } from './TabNavigation';
 

@@ -1,6 +1,4 @@
-import React, { useState, useEffect } from "react";
-import { View, Text, Image, TouchableOpacity } from "react-native";
-import { useNavigation, useRoute } from "@react-navigation/native";
+import { View} from "react-native";
 
 export const MockView = () => {
 
