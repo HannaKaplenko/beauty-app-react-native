@@ -4,9 +4,9 @@ import { RootNavigation } from './src/navigation/RootNavigation';
 
 const App = () => {
   return (
-      <View style={{ flex: 1 }}>
-        <RootNavigation />
-      </View>
+    <View style={{ flex: 1 }}>
+      <RootNavigation />
+    </View>
   );
 };
 export default App;

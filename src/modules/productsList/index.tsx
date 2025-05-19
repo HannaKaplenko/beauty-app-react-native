@@ -33,11 +33,11 @@ export const ProductsView = () => {
           keyExtractor={item => item.id.toString()}
           renderItem={({ item }) => (
             <TouchableOpacity onPress={() => navigation.navigate('ProductView', { id: item.id })}>
-            <View style={styles.card}>
-              <Text style={styles.title}>{item.title}</Text>
-              <Text style={styles.price}>{item.price}</Text>
-              <Image source={{ uri: item.images[0] }} style={styles.image} />
-            </View>
+              <View style={styles.card}>
+                <Text style={styles.title}>{item.title}</Text>
+                <Text style={styles.price}>{item.price}</Text>
+                <Image source={{ uri: item.images[0] }} style={styles.image} />
+              </View>
             </TouchableOpacity>
           )}
         />

@@ -25,7 +25,7 @@ export const styles = StyleSheet.create({
         lineHeight: 24,
         marginBottom: 10,
     },
-        brand: {
+    brand: {
         color: "#000000",
         fontWeight: "bold",
         fontSize: 24,
