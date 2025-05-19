@@ -2,7 +2,7 @@ import { Button, StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
     container: {
-        backgroundColor: "#096B68",
+        backgroundColor: "#FFE9FF",
         width: "100%",
         height: "100%",
         alignItems: "center",
@@ -19,7 +19,7 @@ export const styles = StyleSheet.create({
         marginVertical: 195,
     },
     title: {
-        color: "#FE4F2D",
+        color: "#000000",
         fontWeight: 500,
         fontSize: 24,
         lineHeight: 32,
