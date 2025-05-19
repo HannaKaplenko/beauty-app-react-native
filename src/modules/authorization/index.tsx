@@ -29,7 +29,7 @@ export const AuthorizationView = () => {
       });
       const data = await response.json();
       if (data.accessToken) {
-        navigation.navigate('ProductsView');
+        navigation.navigate('TabNavigation');
       }
     } catch (error) {
       console.error('Error:', error);

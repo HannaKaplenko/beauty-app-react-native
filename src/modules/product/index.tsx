@@ -3,7 +3,7 @@ import { styles } from "./styles";
 import { View, Text, Image, TouchableOpacity } from "react-native";
 import { useNavigation, useRoute } from "@react-navigation/native";
 import { IProduct } from "../../entities/product/iProduct";
-import { ScrollView } from "react-native-gesture-handler";
+import { ScrollView } from "react-native";
 
 export const ProductView = () => {
     const [isLoading, setIsLoading] = useState(true);
