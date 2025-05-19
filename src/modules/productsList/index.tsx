@@ -3,7 +3,6 @@ import { styles } from './styles';
 import { Text, View, FlatList, Image, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
-
 export const ProductsView = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [products, setProducts] = useState<any>([]);
