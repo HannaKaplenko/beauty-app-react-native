@@ -24,7 +24,7 @@ export const ProductView = () => {
     }
     return (
         <View style={styles.container}>
-            <ScrollView style={styles.scroll}>
+            <ScrollView style={styles.scroll} contentContainerStyle={styles.contentContainerStyle}>
                 <Image source={{ uri: product?.images[0] }} style={styles.image} />
                 <Text style={styles.label}>{product?.title}:</Text>
                 <Text style={styles.brand}>{product?.brand}</Text>

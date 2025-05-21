@@ -5,37 +5,37 @@ import { Text } from 'react-native';
 
 const Tab = createBottomTabNavigator();
 
-export const TabNavigation = () => { 
+export const TabNavigation = () => {
   return (
-    <Tab.Navigator screenOptions={{headerShown: false}}>
-      <Tab.Screen 
-      name="HomeView" 
-      component={ProductsView} 
-      options={{
-        tabBarLabel: ({ focused }) => <Text style= {{color: focused ? "#000" : "#888"}}> Home </Text>
-      }}
+    <Tab.Navigator screenOptions={{ headerShown: false }}>
+      <Tab.Screen
+        name="HomeView"
+        component={ProductsView}
+        options={{
+          tabBarLabel: ({ focused }) => <Text style={{ color: focused ? "#000" : "#888" }}> Home </Text>
+        }}
       />
-      <Tab.Screen 
-      name="CartView" 
-      component={MockView} 
-      options={{
-        tabBarLabel: ({ focused }) => <Text style= {{color: focused ? "#000" : "#888"}}> Cart </Text>
-    }}
-        />
-      <Tab.Screen 
-      name="ChatView" 
-      component={MockView} 
-      options={{
-        tabBarLabel: ({ focused }) => <Text style= {{color: focused ? "#000" : "#888"}}> Chat </Text>
+      <Tab.Screen
+        name="CartView"
+        component={MockView}
+        options={{
+          tabBarLabel: ({ focused }) => <Text style={{ color: focused ? "#000" : "#888" }}> Cart </Text>
         }}
-        />
-      <Tab.Screen 
-      name="ProfileView" 
-      component={MockView} 
-      options={{
-        tabBarLabel: ({ focused }) => <Text style= {{color: focused ? "#000" : "#888"}}> Profile </Text>
+      />
+      <Tab.Screen
+        name="ChatView"
+        component={MockView}
+        options={{
+          tabBarLabel: ({ focused }) => <Text style={{ color: focused ? "#000" : "#888" }}> Chat </Text>
         }}
-        />
+      />
+      <Tab.Screen
+        name="ProfileView"
+        component={MockView}
+        options={{
+          tabBarLabel: ({ focused }) => <Text style={{ color: focused ? "#000" : "#888" }}> Profile </Text>
+        }}
+      />
     </Tab.Navigator>
   );
 }

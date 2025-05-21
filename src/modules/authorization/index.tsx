@@ -4,7 +4,7 @@ import { Text, View, TextInput, TouchableOpacity, SafeAreaView, Image } from 're
 import { useNavigation } from '@react-navigation/native';
 
 export const AuthorizationView = () => {
-  const [form, setForm] = useState({ username: '', password: '', });
+  const [form, setForm] = useState({ username: 'emilys', password: 'emilyspass', });
   const [showPassword, setShowPassword] = useState(true);
   const navigation = useNavigation<any>();
   const [error, setError] = useState("");

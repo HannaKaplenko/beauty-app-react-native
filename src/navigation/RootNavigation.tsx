@@ -6,6 +6,5 @@ export const RootNavigation = () => {
         <NavigationContainer>
             <StackNavigation />
         </NavigationContainer>
-
     );
 }
