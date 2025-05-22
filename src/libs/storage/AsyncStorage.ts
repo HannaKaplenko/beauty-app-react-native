@@ -1,6 +1,7 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 class AsyncStorageService {
+    isUserAuthorized!: () => Promise<void>;
 
     async setItem(key: string, value: any): Promise<void> {
         try {

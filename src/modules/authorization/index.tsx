@@ -34,7 +34,7 @@ export const AuthorizationView = () => {
             const data = await response.json();
             if (data.accessToken) {
                 await storage.setItem("User", data);
-                navigation.navigate('TabNavigation');
+                navigation.replace('TabNavigation');
             }
         } catch (error) {
             console.error('Error:', error);
