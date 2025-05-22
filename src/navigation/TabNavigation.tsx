@@ -2,6 +2,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { MockView } from '../modules/mockScreen';
 import { ProductsView } from '../modules/productsList';
 import { Text } from 'react-native';
+import { ProfileView } from '../modules/profile/ui';
 
 const Tab = createBottomTabNavigator();
 
@@ -31,7 +32,7 @@ export const TabNavigation = () => {
       />
       <Tab.Screen
         name="ProfileView"
-        component={MockView}
+        component={ProfileView}
         options={{
           tabBarLabel: ({ focused }) => <Text style={{ color: focused ? "#000" : "#888" }}> Profile </Text>
         }}
