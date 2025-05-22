@@ -25,7 +25,7 @@ export const SplashView = () => {
 
     return (
         <View style={styles.container}>
-            <Text style={styles.title}>Beauty App</Text>
+            <Text style={styles.title}>Ur Needs</Text>
         </View>
     );
 };

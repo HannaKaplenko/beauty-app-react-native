@@ -9,7 +9,7 @@ const Stack = createStackNavigator();
 
 export const StackNavigation = () => {
   return (
-    <Stack.Navigator initialRouteName='AuthorizationView'>
+    <Stack.Navigator initialRouteName='SplashView'>
       <Stack.Screen name="SplashView" component={SplashView} options={{ headerShown: false }} />
       <Stack.Screen name="AuthorizationView" component={AuthorizationView} options={{ title: "Main page" }} />
       <Stack.Screen name="TabNavigation" component={TabNavigation} />
