@@ -1,27 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { styles } from "./styles";
 import { View, Text, Image, TouchableOpacity } from "react-native";
-import { useNavigation, useRoute } from "@react-navigation/native";
-import { IProduct } from "../../entities/product/iProduct";
 import { ScrollView } from "react-native";
+import { useProduct } from "../presenters/useProduct";
 
 export const ProductView = () => {
-    const [isLoading, setIsLoading] = useState(true);
-    const [product, setProduct] = useState<IProduct | null>(null);
-    const navigation = useNavigation<any>();
-    const { id } = useRoute<any>().params || {};
+    const { product, isLoading, navigation } = useProduct();
 
-    useEffect(() => {
-        getProduct();
-    }, []);
-
-    const getProduct = async () => {
-        setIsLoading(true);
-        const response = await fetch(`https://dummyjson.com/products/${id}`);
-        const data = await response.json();
-        setProduct(data);
-        setIsLoading(false);
-    }
     return (
         <View style={styles.container}>
             <ScrollView style={styles.scroll} contentContainerStyle={styles.contentContainerStyle}>

@@ -1,6 +1,6 @@
 import { createStackNavigator } from '@react-navigation/stack';
-import { AuthorizationView } from '../modules/authorization';
-import { ProductView } from "../modules/product";
+import { AuthorizationView } from '../modules/authorization/ui';
+import { ProductView } from "../modules/product/ui";
 import { TabNavigation } from './TabNavigation';
 import { SplashView } from '../modules/splashView/ui';
 import { ProfileView } from '../modules/profile/ui';

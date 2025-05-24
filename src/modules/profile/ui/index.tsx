@@ -1,17 +1,10 @@
 import React from 'react';
 import { styles } from './styles';
 import { Text, TouchableOpacity, View } from 'react-native';
-import { storage } from '../../../libs/storage/AsyncStorage';
-import { useNavigation } from '@react-navigation/native';
-import { StackNavigationProp } from '@react-navigation/stack';
+import { useProfile } from '../presenters/useProfile';
 
 export const ProfileView = () => {
-    const navigation = useNavigation<StackNavigationProp<any>>();
-
-    const logout = async () => {
-        await storage.removeItem("USER");
-        navigation.replace("AuthorizationView");
-    }
+    const { logout } = useProfile();
 
     return (
         <View style={styles.container}>

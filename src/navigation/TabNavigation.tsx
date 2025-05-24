@@ -1,6 +1,6 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { MockView } from '../modules/mockScreen';
-import { ProductsView } from '../modules/productsList';
+import { ProductsView } from '../modules/productsList/ui';
 import { Text } from 'react-native';
 import { ProfileView } from '../modules/profile/ui';
 import { TabHomeIcon } from '../../assets/icons/TabHomeIcon';

@@ -1,45 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { styles } from './styles';
 import { Text, View, TextInput, TouchableOpacity, SafeAreaView, Image } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
-import { storage } from '../../libs/storage/AsyncStorage';
+import { useAuthorization } from '../presenters/useAuthorization';
 
 export const AuthorizationView = () => {
-    const [form, setForm] = useState({ username: 'emilys', password: 'emilyspass', });
-    const [showPassword, setShowPassword] = useState(true);
-    const navigation = useNavigation<any>();
-    const [error, setError] = useState("");
-
-    const onChangeLogin = (text: string) => {
-        setForm({ ...form, username: text });
-    };
-
-    const onChangePassword = (text: string) => {
-        setForm({ ...form, password: text });
-    };
-
-    const onAuthorize = async () => {
-        try {
-            const response = await fetch('https://dummyjson.com/auth/login', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    Accept: 'application/json',
-                },
-                body: JSON.stringify({
-                    username: form.username,
-                    password: form.password,
-                }),
-            });
-            const data = await response.json();
-            if (data.accessToken) {
-                await storage.setItem("User", data);
-                navigation.replace('TabNavigation');
-            }
-        } catch (error) {
-            console.error('Error:', error);
-        }
-    };
+    const { form, showPassword, onChangeLogin, onChangePassword, onAuthorize, setShowPassword } = useAuthorization();
 
     return (
         <SafeAreaView>
@@ -61,7 +26,7 @@ export const AuthorizationView = () => {
                             secureTextEntry={!showPassword}
                             style={styles.input} />
                         <TouchableOpacity style={styles.eyeButton} onPressIn={() => setShowPassword(!showPassword)}>
-                            <Image source={require("../../../assets/images/eye.png")} style={styles.eyeButton} accessibilityLabel="eye" />
+                            <Image source={require("../../../../assets/images/eye.png")} style={styles.eyeButton} accessibilityLabel="eye" />
                         </TouchableOpacity>
                     </View>
                     <Text style={styles.message}> Якщо ви забули пароль зверніться до адміністратора </Text>

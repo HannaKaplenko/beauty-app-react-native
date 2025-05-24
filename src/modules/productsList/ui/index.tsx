@@ -1,24 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { styles } from './styles';
 import { Text, View, FlatList, Image, TouchableOpacity } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+import { useProductsList } from '../presenters/useProductsList';
 
 export const ProductsView = () => {
-  const [isLoading, setIsLoading] = useState(true);
-  const [products, setProducts] = useState<any>([]);
-  const navigation = useNavigation<any>();
-
-  useEffect(() => {
-    getProducts();
-  }, []);
-
-  const getProducts = async () => {
-    setIsLoading(true);
-    const response = await fetch('https://dummyjson.com/products');
-    const data = await response.json();
-    setProducts(data.products);
-    setIsLoading(false);
-  };
+  const { isLoading, navigation, products } = useProductsList();
 
   return (
     <View style={styles.container}>

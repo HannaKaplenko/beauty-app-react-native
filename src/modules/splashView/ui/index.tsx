@@ -1,27 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { styles } from './styles';
 import { Text, View } from 'react-native';
-import { storage } from '../../../libs/storage/AsyncStorage';
-import { useNavigation } from '@react-navigation/native';
-import { StackNavigationProp } from '@react-navigation/stack';
+import { useSplash } from '../presenters/useSplash';
 
 export const SplashView = () => {
-    const navigation = useNavigation<StackNavigationProp<any>>();
-
-    useEffect(() => {
-        setTimeout(() => {
-            isUserAuthorized();
-        }, 2000);
-    }, []);
-
-    const isUserAuthorized = async () => {
-        const user = await storage.getItem("USER");
-        if (user) {
-            navigation.replace("TabNavigation");
-        } else {
-            navigation.replace("AuthorizationView");
-        }
-    }
+    useSplash();
 
     return (
         <View style={styles.container}>
