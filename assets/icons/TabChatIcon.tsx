@@ -9,7 +9,7 @@ interface IProps {
 
 export const TabChatIcon: FC<IProps> = ({ width, height, color }) => {
     return (
-        <Svg width={width || 122} height={height || 122} viewBox="0 0 122 122">
+        <Svg width={width || 122} height={height || 122} viewBox="0 0 122 120">
             <Path
                 fill={color || "#000"}
                 fillRule="evenodd"
