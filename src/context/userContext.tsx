@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, ReactNode, FC, Children } from 'react';
+import React, { createContext, useContext, useState, FC } from 'react';
 import { IUser } from '../entities/user/IUser';
 
 export const UserContext = createContext<{ user: IUser | null; setUser: (user: IUser | null) => void; }>({} as any);
