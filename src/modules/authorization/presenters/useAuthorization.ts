@@ -1,9 +1,10 @@
 import { useNavigation } from "@react-navigation/native";
 import { useState } from "react";
 import { storage } from "../../../libs/storage/AsyncStorage";
+import { useUserContext } from "../../../context/userContext";
 
 export const useAuthorization = () => {
-
+    const { setUser } = useUserContext();
     const [form, setForm] = useState({ username: 'emilys', password: 'emilyspass', });
     const [showPassword, setShowPassword] = useState(true);
     const navigation = useNavigation<any>();
@@ -33,6 +34,7 @@ export const useAuthorization = () => {
             const data = await response.json();
             if (data.accessToken) {
                 await storage.setItem("User", data);
+                setUser(data);
                 navigation.replace('TabNavigation');
             }
         } catch (error) {
