@@ -33,7 +33,7 @@ export const useAuthorization = () => {
             });
             const data = await response.json();
             if (data.accessToken) {
-                await storage.setItem("User", data);
+                await storage.setItem("USER", data);
                 setUser(data);
                 navigation.replace('TabNavigation');
             }
