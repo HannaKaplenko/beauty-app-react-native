@@ -2,10 +2,10 @@ import { useNavigation } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { useEffect } from "react";
 import { storage } from "../../../libs/storage/AsyncStorage";
-import { useUserContext } from "../../../context/userContext";
+import { userStore } from "../../../entities/user/UserModel";
 
 export const useSplash = () => {
-    const { setUser } = useUserContext();
+    const { setUser } = userStore();
     const navigation = useNavigation<StackNavigationProp<any>>();
 
     useEffect(() => {
@@ -17,7 +17,6 @@ export const useSplash = () => {
     const isUserAuthorized = async () => {
         const user: any = await storage.getItem("USER");
         if (user) {
-            setUser(user);
             navigation.replace("TabNavigation");
         } else {
             navigation.replace("AuthorizationView");

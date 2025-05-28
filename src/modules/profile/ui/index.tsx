@@ -2,10 +2,10 @@ import React from 'react';
 import { styles } from './styles';
 import { Text, TouchableOpacity, View } from 'react-native';
 import { useProfile } from '../presenters/useProfile';
-import { useUserContext } from '../../../context/userContext';
+import { userStore } from '../../../entities/user/UserModel';
 
 export const ProfileView = () => {
-    const { user } = useUserContext();
+    const { user } = userStore();
     const { logout } = useProfile();
 
     return (
