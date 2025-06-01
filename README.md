@@ -12,3 +12,10 @@
 ## Add gradlew for IOS
 1) ```cd android```
 2) ```chmod +x gradlew```
+
+## TRANSFORM_DEGREE = {
+    UP: "0deg",
+    LEFT: "90deg",
+    DOWN: "180deg",
+    RIGHT: "270deg",
+}
