@@ -3,7 +3,7 @@ import { IColors } from "./IColors";
 export const COLORS: { dark: IColors; light: IColors } = {
     dark: {
         text: "#FFFFFF",
-        background: "#000000",
+        background: "#121111",
         card: "#1c1c1e",
         notification: "#ff453a",
         border: "#2c2c2e",
