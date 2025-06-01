@@ -1,14 +1,16 @@
 import React from 'react';
 import { View } from 'react-native';
 import { RootNavigation } from './src/navigation/RootNavigation';
-import { create } from 'zustand'
+import { UIProvider } from './src/UIProvider';
 
 const App = () => {
 
   return (
-    <View style={{ flex: 1 }}>
-      <RootNavigation />
-    </View>
+    <UIProvider>
+      <View style={{ flex: 1 }}>
+        <RootNavigation />
+      </View>
+    </UIProvider>
   );
 };
 export default App;

@@ -1,0 +1,20 @@
+import { IColors } from "./IColors";
+
+export const COLORS: { dark: IColors; light: IColors } = {
+    dark: {
+        text: "#FFFFFF",
+        background: "#000000",
+        card: "#1c1c1e",
+        notification: "#ff453a",
+        border: "#2c2c2e",
+        primary: "#0a64ff"
+    },
+    light: {
+        text: "#000000",
+        background: "#FFFFFF",
+        card: "#F8F9FA",
+        notification: "#FF3B30",
+        border: "#E0E0E0",
+        primary: "#007AFF",
+    }
+}
