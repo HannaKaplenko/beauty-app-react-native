@@ -1,21 +1,22 @@
 import { StyleSheet } from "react-native";
+import { IColors } from "../../../UIProvider/theme/IColors";
 
-export const styles = StyleSheet.create({
+export const getStyles = (colors: IColors) => StyleSheet.create({
     container: {
-        backgroundColor: "#FFE9FF",
+        backgroundColor: colors.background,
         width: "100%",
         height: "100%",
         alignItems: "center",
         justifyContent: "center",
     },
     title: {
-        color: "#000000",
+        color: colors.text,
         fontWeight: 500,
         fontSize: 24,
         lineHeight: 32,
     },
     button: {
-        backgroundColor: "#FE4F2D",
+        backgroundColor: colors.button,
         width: "80%",
         height: 44,
         borderRadius: 8,
@@ -24,7 +25,7 @@ export const styles = StyleSheet.create({
         marginTop: 20,
     },
     message: {
-        color: "#000000",
+        color: colors.text,
         textAlign: "center",
         fontWeight: 'bold',
         fontSize: 20,
@@ -32,7 +33,7 @@ export const styles = StyleSheet.create({
         margin: 10,
     },
     buttonText: {
-        color: "#FFFFFF",
+        color: colors.text,
         fontWeight: "bold",
         fontSize: 20,
         textAlign: "center",

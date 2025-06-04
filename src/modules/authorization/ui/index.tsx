@@ -1,10 +1,13 @@
 import React from 'react';
-import { styles } from './styles';
+import { getStyles } from './styles';
 import { Text, View, TextInput, TouchableOpacity, SafeAreaView, Image } from 'react-native';
 import { useAuthorization } from '../presenters/useAuthorization';
+import { useUIContext } from '../../../UIProvider';
 
 export const AuthorizationView = () => {
     const { form, showPassword, onChangeLogin, onChangePassword, onAuthorize, setShowPassword } = useAuthorization();
+    const { colors } = useUIContext();
+    const styles = getStyles(colors);
 
     return (
         <SafeAreaView>

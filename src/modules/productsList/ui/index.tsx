@@ -1,9 +1,12 @@
 import React from 'react';
-import { styles } from './styles';
+import { getStyles } from './styles';
 import { Text, View, FlatList, Image, TouchableOpacity } from 'react-native';
 import { useProductsList } from '../presenters/useProductsList';
+import { useUIContext } from '../../../UIProvider';
 
 export const ProductsView = () => {
+  const { colors } = useUIContext();
+  const styles = getStyles(colors);
   const { isLoading, navigation, products } = useProductsList();
 
   return (

@@ -1,15 +1,16 @@
 import { StyleSheet } from "react-native";
+import { IColors } from "../../../UIProvider/theme/IColors";
 
-export const styles = StyleSheet.create({
+export const getStyles = (colors: IColors) => StyleSheet.create({
     container: {
-        backgroundColor: "#FFE9FF",
+        backgroundColor: colors.background,
         width: "100%",
         height: "100%",
         alignItems: "center",
         justifyContent: "center",
     },
     title: {
-        color: "#000000",
+        color: colors.text,
         fontWeight: 500,
         fontSize: 24,
         lineHeight: 32,

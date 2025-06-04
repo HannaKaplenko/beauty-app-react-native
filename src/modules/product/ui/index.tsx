@@ -1,10 +1,13 @@
 import React from "react";
-import { styles } from "./styles";
+import { getStyles } from "./styles";
 import { View, Text, Image, TouchableOpacity } from "react-native";
 import { ScrollView } from "react-native";
 import { useProduct } from "../presenters/useProduct";
+import { useUIContext } from "../../../UIProvider";
 
 export const ProductView = () => {
+    const { colors } = useUIContext();
+    const styles = getStyles(colors);
     const { product, isLoading, navigation } = useProduct();
 
     return (

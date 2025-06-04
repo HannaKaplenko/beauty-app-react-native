@@ -1,11 +1,16 @@
 import React from "react";
-import { styles } from "./styles";
+import { getStyles } from "./styles";
 import { View } from "react-native";
+import { useUIContext } from "../../../UIProvider";
 
 export const SettingsView = () => {
+    const { colors } = useUIContext();
+    const styles = getStyles(colors);
 
     return (
         <View style={styles.container}>
         </View>
     )
 };
+
+

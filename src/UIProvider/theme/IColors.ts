@@ -7,4 +7,5 @@ export type IColors = {
     notification: string;
     border: string;
     primary: string;
+    button: string;
 };

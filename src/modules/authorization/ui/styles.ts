@@ -1,8 +1,9 @@
 import { StyleSheet } from "react-native";
+import { IColors } from "../../../UIProvider/theme/IColors";
 
-export const styles = StyleSheet.create({
+export const getStyles = (colors: IColors) => StyleSheet.create({
     container: {
-        backgroundColor: "#FFE9FF",
+        backgroundColor: colors.background,
         width: "100%",
         height: "100%",
         alignItems: "center",
@@ -14,18 +15,18 @@ export const styles = StyleSheet.create({
         borderRadius: 10,
         paddingVertical: 30,
         paddingHorizontal: 24,
-        backgroundColor: "#FFFBDE",
+        backgroundColor: colors.card,
         marginHorizontal: 16,
         marginVertical: 195,
     },
     title: {
-        color: "#000000",
+        color: colors.text,
         fontWeight: 500,
         fontSize: 24,
         lineHeight: 32,
     },
     label: {
-        color: "#000000",
+        color: colors.text,
         fontWeight: 500,
         fontSize: 16,
     },
@@ -39,7 +40,7 @@ export const styles = StyleSheet.create({
         height: 40,
         borderRadius: 8,
         borderWidth: 1,
-        color: "#000000",
+        color: colors.text,
         paddingHorizontal: 8,
         marginVertical: 10,
     },
@@ -54,14 +55,14 @@ export const styles = StyleSheet.create({
         padding: 8,
     },
     message: {
-        color: "#191F35",
+        color: colors.text,
         fontWeight: "bold",
         fontSize: 12,
         textAlign: "center",
         marginBottom: 40,
     },
     button: {
-        backgroundColor: "#FE4F2D",
+        backgroundColor: colors.button,
         width: 295,
         height: 44,
         borderRadius: 8,
@@ -69,7 +70,7 @@ export const styles = StyleSheet.create({
         alignItems: "center",
     },
     buttonText: {
-        color: "#FFFFFF",
+        color: colors.text,
         fontSize: 16,
         fontWeight: 'bold',
     },

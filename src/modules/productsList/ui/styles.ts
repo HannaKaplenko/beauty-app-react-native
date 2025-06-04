@@ -1,7 +1,9 @@
 import { StyleSheet } from "react-native";
-export const styles = StyleSheet.create({
+import { IColors } from "../../../UIProvider/theme/IColors";
+
+export const getStyles = (colors: IColors) => StyleSheet.create({
    container: {
-      backgroundColor: "#FFFFFF",
+      backgroundColor: colors.background,
       width: "100%",
       flex: 1,
    },
@@ -9,7 +11,7 @@ export const styles = StyleSheet.create({
       paddingVertical: 20,
    },
    card: {
-      backgroundColor: "#FFE9FF",
+      backgroundColor: colors.card,
       textAlign: "center",
       padding: 20,
       marginHorizontal: 20,
@@ -19,12 +21,12 @@ export const styles = StyleSheet.create({
       flex: 1,
    },
    title: {
-      color: "#000000",
+      color: colors.text,
       fontWeight: "bold",
       fontSize: 20,
    },
    price: {
-      color: "#000000",
+      color: colors.text,
       textAlign: "center",
       fontStyle: "italic",
       fontWeight: "bold",
@@ -34,7 +36,7 @@ export const styles = StyleSheet.create({
       height: 70,
    },
    loadingText: {
-      color: "#000000",
+      color: colors.text,
       textAlign: "center",
       fontStyle: "italic",
       fontWeight: "bold",

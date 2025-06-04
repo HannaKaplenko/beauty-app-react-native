@@ -1,13 +1,14 @@
 import { StyleSheet } from "react-native";
+import { IColors } from "../../../UIProvider/theme/IColors";
 
-export const styles = StyleSheet.create({
+export const getStyles = (colors: IColors) => StyleSheet.create({
 
     container: {
-        backgroundColor: "#FFFFFF",
+        backgroundColor: colors.background,
         flex: 1,
     },
     scroll: {
-        backgroundColor: "#FFE9FF",
+        backgroundColor: colors.card,
         flex: 1,
         paddingHorizontal: 20,
         paddingBottom: 20,
@@ -18,10 +19,10 @@ export const styles = StyleSheet.create({
     image: {
         width: "100%",
         height: 400,
-        backgroundColor: "#FFE9FF",
+        backgroundColor: colors.background,
     },
     label: {
-        color: "#000089",
+        color: colors.text,
         fontWeight: "bold",
         fontSize: 20,
         textAlign: "center",
@@ -29,19 +30,19 @@ export const styles = StyleSheet.create({
         marginBottom: 10,
     },
     brand: {
-        color: "#000000",
+        color: colors.text,
         fontWeight: "bold",
         fontSize: 24,
         lineHeight: 28,
         marginVertical: 10,
     },
     description: {
-        color: "#000000",
+        color: colors.text,
         fontSize: 20,
         lineHeight: 24,
     },
     weight: {
-        color: "#000000",
+        color: colors.text,
         fontSize: 20,
         lineHeight: 24,
         marginVertical: 10,
@@ -54,13 +55,13 @@ export const styles = StyleSheet.create({
         marginBottom: 20,
     },
     price: {
-        color: "#890023",
+        color: colors.text,
         fontWeight: "bold",
         fontSize: 30,
         textAlign: "center",
     },
     discount: {
-        color: "#000089",
+        color: colors.text,
         fontWeight: "bold",
         fontSize: 20,
         marginBottom: 10,
@@ -75,7 +76,7 @@ export const styles = StyleSheet.create({
         marginTop: 20,
     },
     bottomText: {
-        color: "#FFFFFF",
+        color: colors.text,
         fontWeight: "bold",
         fontSize: 20,
         textAlign: "center",
