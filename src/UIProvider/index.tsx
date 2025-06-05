@@ -19,8 +19,8 @@ interface IProps {
 }
 
 export const UIProvider: FC<IProps> = ({ children }) => {
-    const { colors, theme, setTheme } = useColorTheme();
-    const value = { colors, theme, setTheme };
+    const { colors, theme, onHandleThemeChange} = useColorTheme();
+    const value = { colors, theme, setTheme: onHandleThemeChange };
 
     return <UIContext.Provider value={value}>{children}</UIContext.Provider>
 }

@@ -1,9 +1,10 @@
 import React from "react";
 import { getStyles } from "./styles";
-import { View, Text, Image, TouchableOpacity } from "react-native";
+import { View, Text, TouchableOpacity } from "react-native";
 import { ScrollView } from "react-native";
 import { useProduct } from "../presenters/useProduct";
 import { useUIContext } from "../../../UIProvider";
+import FastImage from "react-native-fast-image";
 
 export const ProductView = () => {
     const { colors } = useUIContext();
@@ -13,7 +14,7 @@ export const ProductView = () => {
     return (
         <View style={styles.container}>
             <ScrollView style={styles.scroll} contentContainerStyle={styles.contentContainerStyle}>
-                <Image source={{ uri: product?.images[0] }} style={styles.image} />
+                <FastImage source={{ uri: product?.images[0] }} style={styles.image} />
                 <Text style={styles.label}>{product?.title}:</Text>
                 <Text style={styles.brand}>{product?.brand}</Text>
                 <Text style={styles.description}>{product?.description}</Text>

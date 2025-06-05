@@ -1,6 +1,6 @@
 import React from "react";
 import { View } from "react-native";
-import { getStyles } from "../../authorization/ui/styles";
+import { getStyles } from './styles';
 import { useUIContext } from "../../../UIProvider";
 
 export const AboutUsView = () => {

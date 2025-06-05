@@ -3,7 +3,7 @@ import { View } from "react-native";
 import { useUIContext } from "../../../UIProvider";
 import { getStyles } from "./styles";
 
-export const ChatView = () => {
+export const CartView = () => {
     const { colors } = useUIContext();
     const styles = getStyles(colors);
 

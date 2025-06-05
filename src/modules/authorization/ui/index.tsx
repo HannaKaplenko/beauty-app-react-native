@@ -1,8 +1,9 @@
 import React from 'react';
 import { getStyles } from './styles';
-import { Text, View, TextInput, TouchableOpacity, SafeAreaView, Image } from 'react-native';
+import { Text, View, TextInput, TouchableOpacity, SafeAreaView } from 'react-native';
 import { useAuthorization } from '../presenters/useAuthorization';
 import { useUIContext } from '../../../UIProvider';
+import FastImage from 'react-native-fast-image';
 
 export const AuthorizationView = () => {
     const { form, showPassword, onChangeLogin, onChangePassword, onAuthorize, setShowPassword } = useAuthorization();
@@ -29,7 +30,7 @@ export const AuthorizationView = () => {
                             secureTextEntry={!showPassword}
                             style={styles.input} />
                         <TouchableOpacity style={styles.eyeButton} onPressIn={() => setShowPassword(!showPassword)}>
-                            <Image source={require("../../../../assets/images/eye.png")} style={styles.eyeButton} accessibilityLabel="eye" />
+                            <FastImage source={require("../../../../assets/images/eye.png")} style={styles.eyeButton} accessibilityLabel="eye" />
                         </TouchableOpacity>
                     </View>
                     <Text style={styles.message}> Якщо ви забули пароль зверніться до адміністратора </Text>

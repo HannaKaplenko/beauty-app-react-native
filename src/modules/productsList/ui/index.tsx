@@ -1,8 +1,9 @@
 import React from 'react';
 import { getStyles } from './styles';
-import { Text, View, FlatList, Image, TouchableOpacity } from 'react-native';
+import { Text, View, FlatList, TouchableOpacity } from 'react-native';
 import { useProductsList } from '../presenters/useProductsList';
 import { useUIContext } from '../../../UIProvider';
+import FastImage from 'react-native-fast-image';
 
 export const ProductsView = () => {
   const { colors } = useUIContext();
@@ -24,7 +25,7 @@ export const ProductsView = () => {
               <View style={styles.card}>
                 <Text style={styles.title}>{item.title}</Text>
                 <Text style={styles.price}>{item.price}</Text>
-                <Image source={{ uri: item.images[0] }} style={styles.image} />
+                <FastImage source={{ uri: item.images[0] }} style={styles.image} />
               </View>
             </TouchableOpacity>
           )}
