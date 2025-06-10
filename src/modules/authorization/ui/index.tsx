@@ -7,7 +7,7 @@ import FastImage from 'react-native-fast-image';
 
 export const AuthorizationView = () => {
     const { form, showPassword, onChangeLogin, onChangePassword, onAuthorize, setShowPassword } = useAuthorization();
-    const { colors } = useUIContext();
+    const { colors, t } = useUIContext();
     const styles = getStyles(colors);
 
     return (
@@ -15,13 +15,13 @@ export const AuthorizationView = () => {
             <View style={styles.container}>
                 <View style={styles.card}>
                     <Text style={styles.title}>Ur Needs</Text>
-                    <Text style={styles.label}>Введіть username</Text>
+                    <Text style={styles.label}>{t("authorization.cardTitleUsername")}</Text>
                     <TextInput
                         value={form.username}
                         onChangeText={onChangeLogin}
                         placeholder="Введіть логін"
                         style={styles.input} />
-                    <Text style={styles.label}>Введіть password</Text>
+                    <Text style={styles.label}>{t("authorization.ardTitlePassword")}</Text>
                     <View style={styles.inputWrapper}>
                         <TextInput
                             value={form.password}
@@ -33,9 +33,9 @@ export const AuthorizationView = () => {
                             <FastImage source={require("../../../../assets/images/eye.png")} style={styles.eyeButton} accessibilityLabel="eye" />
                         </TouchableOpacity>
                     </View>
-                    <Text style={styles.message}> Якщо ви забули пароль зверніться до адміністратора </Text>
+                    <Text style={styles.message}> {t("authorization.cardMessage")}</Text>
                     <TouchableOpacity style={styles.button} onPress={onAuthorize}>
-                        <Text style={styles.buttonText}>Увійти</Text>
+                        <Text style={styles.buttonText}>{t("authorization.buttonText")}</Text>
                     </TouchableOpacity>
                 </View>
             </View>

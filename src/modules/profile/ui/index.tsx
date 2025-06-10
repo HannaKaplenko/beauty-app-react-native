@@ -14,31 +14,30 @@ import { StackNavigationProp } from '@react-navigation/stack';
 import { useUIContext } from '../../../UIProvider';
 
 export const ProfileView = () => {
-    const { colors } = useUIContext();
+    const { colors, t } = useUIContext();
     const styles = getStyles(colors);
     const { user } = userStore();
     const { logout } = useProfile();
     const navigation = useNavigation<StackNavigationProp<any>>();
 
     const onGoToChangeTheme = () => { navigation.navigate("ThemeView"); };
-    const onGoToChangeLanguage = () => { navigation.navigate("LanguageView"); };
+    const onGoToChangeLocale = () => { navigation.navigate("LanguageView"); };
     const onGoToChangeWishList = () => { navigation.navigate("WishListView"); };
-    const onGoTOChangeSettings = () => { navigation.navigate("SettingsView") };
-    const onGoTOChangeAboutUs = () => { navigation.navigate("AboutUsView") };
-
+    const onGoToChangeSettings = () => { navigation.navigate("SettingsView") };
+    const onGoToChangeAboutUs = () => { navigation.navigate("AboutUsView") };
 
     return (
         <View style={styles.container}>
-            <Text style={styles.message}>Hello, {user?.username}!</Text>
-            <Text style={styles.message}> Your profile settings.</Text>
-            <ProfileRow title="Language" icon={<LanguageIcon />} onPress={onGoToChangeLanguage} />
-            <ProfileRow title="Colors theme" icon={<ColorThemeIcon />} onPress={onGoToChangeTheme} />
-            <ProfileRow title="WishList" icon={<WishListIcon />} onPress={onGoToChangeWishList} />
-            <ProfileRow title="Settings" icon={<SettingsIcon />} onPress={onGoTOChangeSettings} />
-            <ProfileRow title="About us" icon={<AboutUsIcon />} onPress={onGoTOChangeAboutUs} />
-            <Text style={styles.message}> To leave your profile and close the App press "Logout".</Text>
+            <Text style={styles.message}>{t("settings.greetingMessage")} {user?.username}!</Text>
+            <Text style={styles.message}> {t("settings.title")}</Text>
+            <ProfileRow title={t("settings.language")} icon={<LanguageIcon />} onPress={onGoToChangeLocale} />
+            <ProfileRow title={t("settings.theme")} icon={<ColorThemeIcon />} onPress={onGoToChangeTheme} />
+            <ProfileRow title={t("settings.wishList")} icon={<WishListIcon />} onPress={onGoToChangeWishList} />
+            <ProfileRow title={t("settings.settings")} icon={<SettingsIcon />} onPress={onGoToChangeSettings} />
+            <ProfileRow title={t("settings.aboutUs")} icon={<AboutUsIcon />} onPress={onGoToChangeAboutUs} />
+            <Text style={styles.message}> {t("settings.leaveProfileMessage")}</Text>
             <TouchableOpacity onPress={logout} style={styles.button}>
-                <Text style={styles.buttonText}>Logout</Text>
+                <Text style={styles.buttonText}>{t("settings.buttonText")}</Text>
             </TouchableOpacity>
         </View>
     );

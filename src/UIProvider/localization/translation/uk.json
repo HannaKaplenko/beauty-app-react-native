@@ -1,0 +1,42 @@
+{
+    "language": {
+        "title": "Виберіть мову",
+        "en": "English",
+        "uk": "Українська",
+        "ru": "Русский",
+        "save": "Зберегти"
+    },
+    "settings": {
+        "title": "Налаштування профілю",
+        "language": "Мова",
+        "theme": "Тема",
+        "settings": "Налаштування",
+        "wishList": "Список бажань",
+        "aboutUs": "Про нас",
+        "greetingMessage": "Вітаємо,",
+        "leaveProfileMessage": "Щоб вийти з свого профілю, натисніть 'Вийти'.",
+        "buttonText": "Вийти"
+    },
+    "authorization": {
+        "cardTitleUsername": "Введіть свій логін",
+        "ardTitlePassword": "Введіть свій пароль",
+        "cardMessage": "Якщо ви забули свій пароль, будь ласка, зв'яжіться з нашим адміністратором.",
+        "buttonText": "Ввійти"
+    },
+    "product": {
+        "title": "Наші товари",
+        "bottomText": "Додати до кошика",
+        "price": "Ціна: $",
+        "discount": "Знижка:",
+        "rating": "Рейтинг:",
+        "stock": "Запас:",
+        "weight": "Вага:",
+        "description": "Про наш продукт"
+    },
+    "cart": {
+        "title": "Ваш кошик"
+    },
+    "chat": {
+        "title": "Чат"
+    }
+}

@@ -1,0 +1,42 @@
+{
+    "language": {
+        "title": "Выберите язык",
+        "en": "English",
+        "uk": "Українська",
+        "ru": "Русский",
+        "save": "Сохранить"
+    },
+    "settings": {
+        "title": "Настройки профиля",
+        "language": "Язык",
+        "theme": "Тема",
+        "settings": "Настройки",
+        "wishList": "Список желаний",
+        "aboutUs": "О нас",
+        "greetingMessage": "Здравствуйте,",
+        "leaveProfileMessage": "Чтобы выйти из своего профиля, нажмите 'Выйти'.",
+        "buttonText": "Выйти"
+    },
+    "authorization": {
+        "cardTitleUsername": "Введите свой логин",
+        "ardTitlePassword": "Введите свой пароль",
+        "cardMessage": "Если Вы забыли свой пароль, пожалуйста, свяжитесь с нашим администратором.",
+        "buttonText": "Ввойти"
+    },
+    "product": {
+        "title": "Наши товары",
+        "bottomText": "Добавить в корзину",
+        "price": "Цена: $",
+        "discount": "Скидка:",
+        "rating": "Рейтинг",
+        "stock": "Запас:",
+        "weight": "Вес:",
+        "description": "О нашем продукте"
+    },
+    "cart": {
+        "title": "Ваша корзина"
+    },
+    "chat": {
+        "title": "Чат"
+    }
+}

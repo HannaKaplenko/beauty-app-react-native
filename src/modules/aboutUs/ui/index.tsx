@@ -4,7 +4,7 @@ import { getStyles } from './styles';
 import { useUIContext } from "../../../UIProvider";
 
 export const AboutUsView = () => {
-    const { colors } = useUIContext();
+    const { colors, t } = useUIContext();
     const styles = getStyles(colors);
 
     return (

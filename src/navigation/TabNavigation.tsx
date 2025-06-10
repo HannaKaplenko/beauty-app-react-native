@@ -8,16 +8,20 @@ import { TabCartIcon } from '../../assets/icons/TabCartIcon';
 import React from 'react';
 import { TabChatIcon } from '../../assets/icons/TabChatIcon';
 import { TabProfileIcon } from '../../assets/icons/TabProfileIcon';
+import { useUIContext } from '../UIProvider';
 
 const Tab = createBottomTabNavigator();
 
 export const TabNavigation = () => {
+  const { t } = useUIContext();
+
   return (
-    <Tab.Navigator screenOptions={{ headerShown: false }}>
+    <Tab.Navigator screenOptions={{ headerShown: true }}>
       <Tab.Screen
         name="HomeView"
         component={ProductsView}
         options={{
+          headerTitle: t("product.title"), headerTitleAlign: "center",
           tabBarIcon: ({ focused }) => <TabHomeIcon height={24} width={24} color={focused ? "#000" : "#888"} />,
           tabBarLabel: ({ focused }) => <Text style={{ color: focused ? "#000" : "#888" }}> Home </Text>
         }}
@@ -26,6 +30,7 @@ export const TabNavigation = () => {
         name="CartView"
         component={MockView}
         options={{
+          headerTitle: t("cart.title"), headerTitleAlign: "center",
           tabBarIcon: ({ focused }) => <TabCartIcon height={24} width={24} color={focused ? "#000" : "#888"} />,
           tabBarLabel: ({ focused }) => <Text style={{ color: focused ? "#000" : "#888" }}> Cart </Text>
         }}
@@ -34,6 +39,7 @@ export const TabNavigation = () => {
         name="ChatView"
         component={MockView}
         options={{
+          headerTitle: t("chat.title"), headerTitleAlign: "center",
           tabBarIcon: ({ focused }) => <TabChatIcon height={24} width={24} color={focused ? "#000" : "#888"} />,
           tabBarLabel: ({ focused }) => <Text style={{ color: focused ? "#000" : "#888" }}> Chat </Text>
         }}
@@ -42,6 +48,7 @@ export const TabNavigation = () => {
         name="ProfileView"
         component={ProfileView}
         options={{
+          headerTitle: t("settings.title"), headerTitleAlign: "center",
           tabBarIcon: ({ focused }) => <TabProfileIcon height={24} width={24} color={focused ? "#000" : "#888"} />,
           tabBarLabel: ({ focused }) => <Text style={{ color: focused ? "#000" : "#888" }}> Profile </Text>
         }}

@@ -1,0 +1,42 @@
+{
+    "language": {
+        "title": "Choose language",
+        "en": "English",
+        "uk": "Українська",
+        "ru": "Русский",
+        "save": "Save"
+    },
+    "settings": {
+        "title": "Your profile settings",
+        "language": "Language",
+        "theme": "Theme",
+        "settings": "Settings",
+        "wishList": "Wish list",
+        "aboutUs": "About us",
+        "greetingMessage": "Hello,",
+        "leaveProfileMessage": "To leave your profile and close the App press 'Logout'.",
+        "buttonText": "Logout"
+    },
+    "authorization": {
+        "cardTitleUsername": "Enter Your username",
+        "ardTitlePassword": "Enter Your password",
+        "cardMessage": "If you have forgotten Your password, please contact our administrator.",
+        "buttonText": "Enter"
+    },
+    "product": {
+        "title": "Our products",
+        "bottomText": "Add to cart",
+        "price": "price: $",
+        "discount": "Discount:",
+        "rating": "Rating:",
+        "stock": "Stock:",
+        "weight": "weight:",
+        "description": "About our product"
+    },
+    "cart": {
+        "title": "Your cart"
+    },
+    "chat": {
+        "title": "Chat"
+    }
+}
