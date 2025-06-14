@@ -21,7 +21,9 @@
         "cardTitleUsername": "Enter Your username",
         "ardTitlePassword": "Enter Your password",
         "cardMessage": "If you have forgotten Your password, please contact our administrator.",
-        "buttonText": "Enter"
+        "buttonText": "Enter",
+        "errorMessage": "Invalid username or password.",
+        "errorElse":"Something went wrong. Please try again."
     },
     "product": {
         "title": "Our products",

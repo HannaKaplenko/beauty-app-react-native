@@ -9,11 +9,10 @@ export const NetInfoStatus: FC = ({ }) => {
     const styles = useMemo(() => getStyles(colors), [colors]);
     const { netInfo: { isConnected } } = useNetInfoInstance();
 
-    return (
-        typeof isConnected != "boolean" && isConnected
-            ? null
-            : <View style={styles.container}>
-                <Text style={styles.text}>{t("NetInfoStatus.message")}</Text>
-            </View>
+    return (isConnected
+        ? null
+        : <View style={styles.container} pointerEvents="none">
+            <Text style={styles.text}>{t("NetInfoStatus.message")}</Text>
+        </View>
     )
 }

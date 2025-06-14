@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { getStyles } from './styles';
-import { Text, View, TextInput, TouchableOpacity, SafeAreaView } from 'react-native';
+import { Text, View, TextInput, TouchableOpacity, SafeAreaView, ToastAndroid, ActivityIndicator } from 'react-native';
 import { useAuthorization } from '../presenters/useAuthorization';
 import { useUIContext } from '../../../UIProvider';
 import FastImage from 'react-native-fast-image';
@@ -9,6 +9,18 @@ export const AuthorizationView = () => {
     const { form, showPassword, onChangeLogin, onChangePassword, onAuthorize, setShowPassword } = useAuthorization();
     const { colors, t } = useUIContext();
     const styles = getStyles(colors);
+    const [loading, setLoading] = useState(false);
+
+    const handleSubmit = async () => {
+        setLoading(true);
+        const result = await onAuthorize();
+        setLoading(false);
+        if (!result.success) {
+            ToastAndroid.show(result.error || "Error", ToastAndroid.SHORT);
+        }
+    };
+
+    const isButtonDisabled = !form.username.trim() || !form.password.trim();
 
     return (
         <SafeAreaView>
@@ -34,8 +46,10 @@ export const AuthorizationView = () => {
                         </TouchableOpacity>
                     </View>
                     <Text style={styles.message}> {t("authorization.cardMessage")}</Text>
-                    <TouchableOpacity style={styles.button} onPress={onAuthorize}>
-                        <Text style={styles.buttonText}>{t("authorization.buttonText")}</Text>
+                    <TouchableOpacity style={styles.button} onPress={handleSubmit} disabled={isButtonDisabled || loading}>
+                        {loading
+                            ? <ActivityIndicator color="#fff" />
+                            : <Text style={styles.buttonText}>{t("authorization.buttonText")}</Text>}
                     </TouchableOpacity>
                 </View>
             </View>
