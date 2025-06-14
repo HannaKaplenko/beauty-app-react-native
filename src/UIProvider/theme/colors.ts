@@ -2,19 +2,21 @@ import { IColors } from "./IColors";
 
 export const COLORS: { dark: IColors; light: IColors } = {
     dark: {
+        text_inverse: "#000000",
         text: "#FFFFFF",
         background: "#121111",
         card: "#1c1c1e",
-        notification: "#ff453a",
+        notification: "#FFFFFF",
         border: "#2c2c2e",
         primary: "#0a64ff",
         button: "#533B4D"
     },
     light: {
+        text_inverse: "#FFFFFF",
         text: "#000000",
         background: "#fbddfb",
         card: "#F8F9FA",
-        notification: "#FF3B30",
+        notification: "#000000",
         border: "#E0E0E0",
         primary: "#007AFF",
         button: "#D17D98"
