@@ -1,5 +1,6 @@
 import { StyleSheet } from "react-native";
 import { IColors } from "../../../UIProvider/theme/IColors";
+import CheckBox from "react-native-check-box";
 
 export const getStyles = (colors: IColors) => StyleSheet.create({
     container: {
@@ -53,13 +54,25 @@ export const getStyles = (colors: IColors) => StyleSheet.create({
         position: 'absolute',
         right: 10,
         padding: 8,
+        marginBottom: 28,
+    },
+    checkBox: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        marginVertical: 10,
+    },
+    checkBoxText: {
+        color: colors.text,
+        lineHeight: 16,
     },
     message: {
         color: colors.text,
         fontWeight: "bold",
         fontSize: 12,
         textAlign: "center",
-        marginBottom: 40,
+        marginBottom: 24,
+        marginTop: 32,
+        paddingTop: 16,
     },
     button: {
         backgroundColor: colors.button,

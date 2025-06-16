@@ -10,8 +10,13 @@ export const useAuthorization = () => {
     const { setUser } = userStore();
     const [form, setForm] = useState({ username: 'emilys', password: 'emilyspass', });
     const [showPassword, setShowPassword] = useState(true);
+    const [isChecked, setIsChecked] = useState(false);
     const navigation = useNavigation<any>();
     const { t } = useUIContext();
+
+    const toggleCheckbox = () => {
+        setIsChecked(prev => !prev);
+    };
 
     const onChangeLogin = (text: string) => {
         setForm({ ...form, username: text });
@@ -58,6 +63,6 @@ export const useAuthorization = () => {
             return { success: false, error: t("authorization.errorElse") };
         }
     };
-    return { form, showPassword, onChangeLogin, onChangePassword, onAuthorize, setShowPassword };
-};
+    return { form, showPassword, onChangeLogin, onChangePassword, onAuthorize, setShowPassword, toggleCheckbox, isChecked, };
+}
 

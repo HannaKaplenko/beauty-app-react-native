@@ -23,7 +23,8 @@
         "cardMessage": "If you have forgotten Your password, please contact our administrator.",
         "buttonText": "Enter",
         "errorMessage": "Invalid username or password.",
-        "errorElse":"Something went wrong. Please try again."
+        "errorElse":"Something went wrong. Please try again.",
+        "checkBox":"I agree to the user rules and consent to the processing of personal data."
     },
     "product": {
         "title": "Our products",
