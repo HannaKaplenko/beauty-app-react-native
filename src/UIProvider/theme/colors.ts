@@ -8,7 +8,7 @@ export const COLORS: { dark: IColors; light: IColors } = {
         card: "#1c1c1e",
         notification: "#FFFFFF",
         border: "#2c2c2e",
-        primary: "#0a64ff",
+        primary: "#f6f5ff",
         button: "#533B4D"
     },
     light: {

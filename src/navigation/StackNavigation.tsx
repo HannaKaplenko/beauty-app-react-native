@@ -12,6 +12,7 @@ import { AboutUsView } from '../modules/aboutUs/ui';
 import { ChatView } from '../modules/chatView/ui';
 import { CartView } from '../modules/cartView/ui';
 import { useUIContext } from '../UIProvider';
+import { ForgotPasswordView } from '../modules/forgotPassword/ui';
 
 const Stack = createStackNavigator();
 
@@ -31,6 +32,7 @@ export const StackNavigation = () => {
       <Stack.Screen name="AboutUsView" component={AboutUsView} options={{ title: t("settings.aboutUs") }} />
       <Stack.Screen name="ChatView" component={ChatView} options={{ title: t("chat.title") }} />
       <Stack.Screen name="CartView" component={CartView} options={{ title: t("cart.title") }} />
+      <Stack.Screen name="ForgotPasswordView" component={ForgotPasswordView} options={{ title: t("forgotPassword.title") }} />
     </Stack.Navigator>
   );
 };

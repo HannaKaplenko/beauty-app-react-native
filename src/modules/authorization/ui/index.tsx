@@ -5,12 +5,14 @@ import { useAuthorization } from '../presenters/useAuthorization';
 import { useUIContext } from '../../../UIProvider';
 import FastImage from 'react-native-fast-image';
 import CheckBox from 'react-native-check-box';
+import { useNavigation } from '@react-navigation/native';
 
 export const AuthorizationView = () => {
     const { form, showPassword, onChangeLogin, onChangePassword, onAuthorize, setShowPassword, isChecked, toggleCheckbox } = useAuthorization();
     const { colors, t } = useUIContext();
     const styles = getStyles(colors);
     const [loading, setLoading] = useState(false);
+    const navigation = useNavigation<any>();
 
     const handleSubmit = async () => {
         setLoading(true);
@@ -44,15 +46,17 @@ export const AuthorizationView = () => {
                             style={styles.input} />
                         <CheckBox
                             isChecked={isChecked}
-                            onClick={toggleCheckbox} 
-                        rightText={t("authorization.checkBox")}
-                        checkBoxColor={colors.primary} 
-                        rightTextStyle={styles.checkBoxText}/>
+                            onClick={toggleCheckbox}
+                            rightText={t("authorization.checkBox")}
+                            checkBoxColor={colors.primary}
+                            rightTextStyle={styles.checkBoxText} />
                         <TouchableOpacity style={styles.eyeButton} onPressIn={() => setShowPassword(!showPassword)}>
                             <FastImage source={require("../../../../assets/images/eye.png")} style={styles.eyeButton} accessibilityLabel="eye" />
                         </TouchableOpacity>
                     </View>
-                    <Text style={styles.message}> {t("authorization.cardMessage")}</Text>
+                    <TouchableOpacity onPress={() => navigation.navigate("ForgotPasswordView")}>
+                        <Text style={styles.message}> {t("authorization.cardMessage")}</Text>
+                    </TouchableOpacity>
                     <TouchableOpacity style={styles.button} onPress={handleSubmit} disabled={isButtonDisabled || loading}>
                         {loading
                             ? <ActivityIndicator color="#fff" />

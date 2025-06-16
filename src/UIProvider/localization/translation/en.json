@@ -23,8 +23,17 @@
         "cardMessage": "If you have forgotten Your password, please contact our administrator.",
         "buttonText": "Enter",
         "errorMessage": "Invalid username or password.",
-        "errorElse":"Something went wrong. Please try again.",
-        "checkBox":"I agree to the user rules and consent to the processing of personal data."
+        "errorElse": "Something went wrong. Please try again.",
+        "checkBox": "I agree to the user rules and consent to the processing of personal data."
+    },
+    "forgotPassword": {
+        "title": "Forgot your password?",
+        "label": "Enter your email",
+        "placeholder": "Email or login",
+        "button": "Restore",
+        "empty": "Enter your email!",
+        "success": "Instructions sent!",
+        "error": "An error occurred."
     },
     "product": {
         "title": "Our products",
