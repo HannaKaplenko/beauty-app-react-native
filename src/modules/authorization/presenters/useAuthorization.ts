@@ -14,6 +14,23 @@ export const useAuthorization = () => {
     const navigation = useNavigation<any>();
     const { t } = useUIContext();
 
+    const validateLogin = (login: string) => {
+        if (!login) return null;
+        if (login.length < 4) {
+            return "Логін має містити мінімум 4 символи!";
+        }
+        return null;
+    };
+
+    const validatePassword = (password: string) => {
+        if (!password) return null;
+        if (password.length < 6) {
+            return "Пароль має містити мінімум 6 символів!";
+        }
+        return null;
+    }
+
+
     const toggleCheckbox = () => {
         setIsChecked(prev => !prev);
     };
@@ -62,7 +79,7 @@ export const useAuthorization = () => {
         } catch (error) {
             return { success: false, error: t("authorization.errorElse") };
         }
-    };
-    return { form, showPassword, onChangeLogin, onChangePassword, onAuthorize, setShowPassword, toggleCheckbox, isChecked, };
-}
+    }
+    return { form, showPassword, onChangeLogin, onChangePassword, onAuthorize, setShowPassword, toggleCheckbox, isChecked, validatePassword, validateLogin };
+};
 

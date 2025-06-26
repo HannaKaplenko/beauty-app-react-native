@@ -12,7 +12,7 @@ export const getStyles = (colors: IColors) => StyleSheet.create({
     },
     card: {
         width: 343,
-        height: 422,
+        height: 520,
         borderRadius: 10,
         paddingVertical: 30,
         paddingHorizontal: 24,
@@ -43,7 +43,12 @@ export const getStyles = (colors: IColors) => StyleSheet.create({
         borderWidth: 1,
         color: colors.text,
         paddingHorizontal: 8,
-        marginVertical: 10,
+        marginVertical: 12,
+    },
+    error: {
+        color: 'red',
+        fontSize: 12,
+        marginBottom: 10,
     },
     inputWrapper: {
         justifyContent: 'center',
@@ -54,7 +59,7 @@ export const getStyles = (colors: IColors) => StyleSheet.create({
         position: 'absolute',
         right: 10,
         padding: 8,
-        marginBottom: 28,
+        marginBottom: 50,
     },
     checkBox: {
         flexDirection: 'row',

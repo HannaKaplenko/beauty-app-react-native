@@ -8,11 +8,13 @@ import CheckBox from 'react-native-check-box';
 import { useNavigation } from '@react-navigation/native';
 
 export const AuthorizationView = () => {
-    const { form, showPassword, onChangeLogin, onChangePassword, onAuthorize, setShowPassword, isChecked, toggleCheckbox } = useAuthorization();
+    const { form, showPassword, onChangeLogin, onChangePassword, onAuthorize, setShowPassword, isChecked, toggleCheckbox, validateLogin, validatePassword } = useAuthorization();
     const { colors, t } = useUIContext();
     const styles = getStyles(colors);
     const [loading, setLoading] = useState(false);
     const navigation = useNavigation<any>();
+    const loginError = validateLogin(form.username);
+    const passwordError = validatePassword(form.password);
 
     const handleSubmit = async () => {
         setLoading(true);
@@ -36,6 +38,7 @@ export const AuthorizationView = () => {
                         onChangeText={onChangeLogin}
                         placeholder="Введіть логін"
                         style={styles.input} />
+                    {loginError && <Text style={styles.error}>{loginError}</Text>}
                     <Text style={styles.label}>{t("authorization.ardTitlePassword")}</Text>
                     <View style={styles.inputWrapper}>
                         <TextInput
@@ -44,13 +47,14 @@ export const AuthorizationView = () => {
                             placeholder="Введіть пароль"
                             secureTextEntry={!showPassword}
                             style={styles.input} />
+                        {passwordError && <Text style={styles.error}>{passwordError}</Text>}
                         <CheckBox
                             isChecked={isChecked}
                             onClick={toggleCheckbox}
                             rightText={t("authorization.checkBox")}
                             checkBoxColor={colors.primary}
                             rightTextStyle={styles.checkBoxText} />
-                        <TouchableOpacity style={styles.eyeButton} onPressIn={() => setShowPassword(!showPassword)}>
+                        <TouchableOpacity style={styles.eyeButton} onPressIn={() => setShowPassword(prev => !prev)}>
                             <FastImage source={require("../../../../assets/images/eye.png")} style={styles.eyeButton} accessibilityLabel="eye" />
                         </TouchableOpacity>
                     </View>
@@ -67,3 +71,5 @@ export const AuthorizationView = () => {
         </SafeAreaView>
     );
 };
+
+
