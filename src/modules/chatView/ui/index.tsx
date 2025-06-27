@@ -14,14 +14,14 @@ export const ChatView = () => {
 
     return (
         <View style={styles.container}>
-                <GiftedChat
-                    messages={messages}
-                    onSend={messages => onSend(messages)}
-                    user={{
-                        _id: 1,
-                        name: user?.username || 'You',
-                    }}
-                />
+            <GiftedChat
+                messages={messages}
+                onSend={messages => onSend(messages)}
+                user={{
+                    _id: 1,
+                    name: user?.username || 'You',
+                }}
+            />
         </View>
     );
 };

@@ -30,9 +30,4 @@ export const getStyles = (colors: IColors) => StyleSheet.create({
         color: colors.text,
         lineHeight: 24,
     },
-    image: {
-        width: '100%',
-        height: 220,
-        marginBottom: 32,
-    }
 })
