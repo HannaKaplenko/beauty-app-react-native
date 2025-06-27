@@ -57,5 +57,8 @@
     "aboutUs": {
         "title": "About Us",
         "text": "At Ur Needs, we believe beauty is confidence. We created this app to make your daily self-care routine simpler, more enjoyable, and more accessible. In our catalog, you'll find only trusted brands, natural ingredients, and products you can rely on. Take care of yourself — we’ll take care of the rest."
+    },
+    "chatView": {
+        "greetingMessage": "Hello,"
     }
 }
