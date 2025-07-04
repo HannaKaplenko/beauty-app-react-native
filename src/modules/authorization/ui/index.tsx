@@ -46,22 +46,22 @@ export const AuthorizationView = () => {
                             onChangeText={onChangePassword}
                             placeholder="Введіть пароль"
                             secureTextEntry={!showPassword}
-                            style={styles.input} />
-                        {passwordError && <Text style={styles.error}>{passwordError}</Text>}
-                        <CheckBox
-                            isChecked={isChecked}
-                            onClick={toggleCheckbox}
-                            rightText={t("authorization.checkBox")}
-                            checkBoxColor={colors.primary}
-                            rightTextStyle={styles.checkBoxText} />
+                            style={styles.inputPassword} />
                         <TouchableOpacity style={styles.eyeButton} onPressIn={() => setShowPassword(prev => !prev)}>
-                            <FastImage source={require("../../../../assets/images/eye.png")} style={styles.eyeButton} accessibilityLabel="eye" />
+                            <FastImage source={require("../../../../assets/images/eye.png")} style={styles.imageEye} accessibilityLabel="eye" />
                         </TouchableOpacity>
                     </View>
+                    {passwordError && <Text style={styles.error}>{passwordError}</Text>}
+                    <CheckBox
+                        isChecked={isChecked}
+                        onClick={toggleCheckbox}
+                        rightText={t("authorization.checkBox")}
+                        checkBoxColor={colors.primary}
+                        rightTextStyle={styles.checkBoxText} />
                     <TouchableOpacity onPress={() => navigation.navigate("ForgotPasswordView")}>
                         <Text style={styles.message}> {t("authorization.cardMessage")}</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.button} onPress={handleSubmit} disabled={isButtonDisabled || loading}>
+                    <TouchableOpacity style={[styles.button, (isButtonDisabled || loading) && styles.buttonDisabled]} onPress={handleSubmit} disabled={isButtonDisabled || loading}>
                         {loading
                             ? <ActivityIndicator color="#fff" />
                             : <Text style={styles.buttonText}>{t("authorization.buttonText")}</Text>}

@@ -9,6 +9,8 @@ import React from 'react';
 import { TabChatIcon } from '../../assets/icons/TabChatIcon';
 import { TabProfileIcon } from '../../assets/icons/TabProfileIcon';
 import { useUIContext } from '../UIProvider';
+import { CartView } from '../modules/cartView/ui';
+import ChatView from '../modules/chatView/ui';
 
 const Tab = createBottomTabNavigator();
 
@@ -28,7 +30,7 @@ export const TabNavigation = () => {
       />
       <Tab.Screen
         name="CartView"
-        component={MockView}
+        component={CartView}
         options={{
           headerTitle: t("cart.title"), headerTitleAlign: "center",
           tabBarIcon: ({ focused }) => <TabCartIcon height={24} width={24} color={focused ? "#000" : "#888"} />,
@@ -37,7 +39,7 @@ export const TabNavigation = () => {
       />
       <Tab.Screen
         name="ChatView"
-        component={MockView}
+        component={ChatView}
         options={{
           headerTitle: t("chat.title"), headerTitleAlign: "center",
           tabBarIcon: ({ focused }) => <TabChatIcon height={24} width={24} color={focused ? "#000" : "#888"} />,

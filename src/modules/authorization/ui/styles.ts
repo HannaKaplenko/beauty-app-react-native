@@ -51,15 +51,30 @@ export const getStyles = (colors: IColors) => StyleSheet.create({
         marginBottom: 10,
     },
     inputWrapper: {
-        justifyContent: 'center',
-        display: "flex",
-        position: 'relative',
+        flexDirection: "row",
+        height: 40,
+        borderRadius: 8,
+        borderWidth: 1,
+        color: colors.text,
+        paddingHorizontal: 8,
+        marginVertical: 12,
+        alignItems: "center",
+    },
+    inputPassword: {
+        flex: 1,
+        height: 38,
+        color: colors.text,
+        paddingHorizontal: 8,
     },
     eyeButton: {
-        position: 'absolute',
-        right: 10,
-        padding: 8,
-        marginBottom: 50,
+        height: 40,
+        width: 40,
+        justifyContent: "center",
+        alignItems: "center",
+    },
+    imageEye: {
+        height: 16,
+        width: 16,
     },
     checkBox: {
         flexDirection: 'row',
@@ -86,6 +101,9 @@ export const getStyles = (colors: IColors) => StyleSheet.create({
         borderRadius: 8,
         padding: 10,
         alignItems: "center",
+    },
+    buttonDisabled: {
+        opacity: 0.5,
     },
     buttonText: {
         color: colors.text,
