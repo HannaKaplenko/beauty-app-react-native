@@ -35,6 +35,9 @@
         "success": "Instructions sent!",
         "error": "An error occurred."
     },
+    "productList": {
+        "buyButtonText": "Add to cart"
+    },
     "product": {
         "title": "Our products",
         "bottomText": "Add to cart",

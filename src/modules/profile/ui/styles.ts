@@ -16,13 +16,7 @@ export const getStyles = (colors: IColors) => StyleSheet.create({
         lineHeight: 32,
     },
     button: {
-        backgroundColor: colors.button,
-        width: "80%",
-        height: 44,
-        borderRadius: 8,
-        alignItems: "center",
-        justifyContent: "center",
-        marginTop: 20,
+        marginHorizontal: 32,
     },
     message: {
         color: colors.text,
@@ -31,11 +25,5 @@ export const getStyles = (colors: IColors) => StyleSheet.create({
         fontSize: 20,
         lineHeight: 24,
         margin: 10,
-    },
-    buttonText: {
-        color: colors.text,
-        fontWeight: "bold",
-        fontSize: 20,
-        textAlign: "center",
     },
 })

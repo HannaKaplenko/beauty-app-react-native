@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { getStyles } from './styles';
-import { Text, View, TextInput, TouchableOpacity, SafeAreaView, ToastAndroid, ActivityIndicator } from 'react-native';
+import { Text, View, TextInput, TouchableOpacity, SafeAreaView, ToastAndroid, ActivityIndicator, Pressable } from 'react-native';
 import { useAuthorization } from '../presenters/useAuthorization';
 import { useUIContext } from '../../../UIProvider';
 import FastImage from 'react-native-fast-image';
@@ -47,9 +47,15 @@ export const AuthorizationView = () => {
                             placeholder="Введіть пароль"
                             secureTextEntry={!showPassword}
                             style={styles.inputPassword} />
+<<<<<<< HEAD
                         <TouchableOpacity style={styles.eyeButton} onPressIn={() => setShowPassword(prev => !prev)}>
                             <FastImage source={require("../../../../assets/images/eye.png")} style={styles.imageEye} accessibilityLabel="eye" />
                         </TouchableOpacity>
+=======
+                        <Pressable style={styles.eyeButton} onPressIn={() => setShowPassword(prev => !prev)}>
+                            <FastImage source={require("../../../../assets/images/eye.png")} style={styles.imageEye} accessibilityLabel="eye" />
+                        </Pressable>
+>>>>>>> temp-restore
                     </View>
                     {passwordError && <Text style={styles.error}>{passwordError}</Text>}
                     <CheckBox

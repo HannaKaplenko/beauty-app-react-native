@@ -9,6 +9,7 @@ export const getStyles = (colors: IColors) => StyleSheet.create({
    },
    contentContainerStyle: {
       paddingVertical: 20,
+      gap: 16,
    },
    card: {
       backgroundColor: colors.card,

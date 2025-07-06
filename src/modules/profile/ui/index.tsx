@@ -12,6 +12,7 @@ import { SettingsIcon } from '../../../../assets/icons/SettingsIcon';
 import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { useUIContext } from '../../../UIProvider';
+import { CustomButton } from '../../../UIKit/CustomButton';
 
 export const ProfileView = () => {
     const { colors, t } = useUIContext();
@@ -36,9 +37,7 @@ export const ProfileView = () => {
             <ProfileRow title={t("settings.settings")} icon={<SettingsIcon />} onPress={onGoToChangeSettings} />
             <ProfileRow title={t("settings.aboutUs")} icon={<AboutUsIcon />} onPress={onGoToChangeAboutUs} />
             <Text style={styles.message}> {t("settings.leaveProfileMessage")}</Text>
-            <TouchableOpacity onPress={logout} style={styles.button}>
-                <Text style={styles.buttonText}>{t("settings.buttonText")}</Text>
-            </TouchableOpacity>
+            <CustomButton text={t("settings.buttonText")} onPress={logout} containerStyle={styles.button}/>
         </View>
     );
 };
