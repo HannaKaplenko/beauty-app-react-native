@@ -34,7 +34,7 @@ export const getStyles = (colors: IColors) => StyleSheet.create({
         fontWeight: '700',
     },
     description: {
-
+        lineHeight: 20,
     },
     footer: {
         flexDirection: 'row',
@@ -46,8 +46,8 @@ export const getStyles = (colors: IColors) => StyleSheet.create({
         lineHeight: 22,
         fontWeight: '700',
     },
-    stock: {
-        fontSize: 12,
-        lineHeight: 16,
+    buttonBuy: {
+        height: 28,
+        paddingHorizontal: 24,
     }
 })

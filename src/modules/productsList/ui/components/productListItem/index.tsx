@@ -6,18 +6,27 @@ import { useUIContext } from '../../../../../UIProvider';
 import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { IProduct } from '../../../../../entities/product/iProduct';
+import { CustomButton } from '../../../../../UIKit/CustomButton';
+import { CartStore } from '../../../../../entities/cart/CartModel';
 
 interface IProps {
     item: IProduct
 }
 
 export const ProductListItem = ({ item }: IProps) => {
-    const { colors } = useUIContext();
+    const { colors, t } = useUIContext();
     const styles = getStyles(colors);
     const navigation = useNavigation<StackNavigationProp<any>>();
+    const { updateProduct, cart } = CartStore();
 
     const onPress = () => {
         navigation.navigate('ProductView', { id: item.id })
+    }
+
+    const onBuy = () => {
+        const oldItem = cart.items.find(({ product }) => product.id === item.id);
+        const newQuantity = oldItem ? oldItem.quantity+1 : 1;
+        updateProduct(item, newQuantity);
     }
 
     return (
@@ -30,7 +39,7 @@ export const ProductListItem = ({ item }: IProps) => {
                 <Text style={styles.description} numberOfLines={2}>{item.description}</Text>
                 <View style={styles.footer}>
                     <Text style={styles.price}>{item.price}</Text>
-                    <Text style={styles.stock}>{item.stock} available</Text>
+                    <CustomButton onPress={onBuy} text={t("productList.buyButtonText")} containerStyle={styles.buttonBuy} />
                 </View>
             </View>
         </TouchableOpacity>

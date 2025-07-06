@@ -3,7 +3,6 @@ import { getStyles } from './styles';
 import { Text, View, FlatList, TouchableOpacity } from 'react-native';
 import { useProductsList } from '../presenters/useProductsList';
 import { useUIContext } from '../../../UIProvider';
-import FastImage from 'react-native-fast-image';
 import { ProductListItem } from './components/productListItem';
 import { IProduct } from '../../../entities/product/iProduct';
 
