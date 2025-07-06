@@ -1,0 +1,43 @@
+import React from "react";
+import { getStyles } from "./styles";
+import { View, Text, TouchableOpacity } from "react-native";
+import { ScrollView } from "react-native";
+import FastImage from "react-native-fast-image";
+import { useUIContext } from "../../../../../UIProvider";
+import { useProduct } from "../../../presenters/useProduct";
+import { CustomButton } from "../../../../../UIKit/CustomButton";
+import { CartStore } from "../../../../../entities/cart/CartModel";
+import { IProduct } from "../../../../../entities/product/iProduct";
+
+export const ProductDetails = () => {
+    const { colors, t } = useUIContext();
+    const styles = getStyles(colors);
+    const { product, isLoading, navigation } = useProduct();
+    const { updateProduct } = CartStore();
+
+    const onBuy = (item: IProduct) => {
+        updateProduct(item, 1);
+        navigation.navigate("CartView");
+    }
+
+    return (
+        <View style={styles.container}>
+            <ScrollView style={styles.scroll} contentContainerStyle={styles.contentContainerStyle}>
+                <FastImage source={{ uri: product?.images[0] }} style={styles.image} />
+                <Text style={styles.label}>{product?.title}:</Text>
+                <Text style={styles.brand}>{product?.brand}</Text>
+                <Text style={styles.description}>{product?.description}</Text>
+                <Text style={styles.weight}>{t("product.weight")} {product?.weight} ml/g</Text>
+                <View style={styles.row}>
+                    <Text style={styles.description}>{t("product.stock")} {product?.stock}</Text>
+                    <Text style={styles.description}>{t("product.rating")} {product?.stock}  ({`${product?.reviews.length} reviews`})</Text>
+                </View>
+                <View>
+                    <Text style={styles.discount}>{t("product.discount")} {product?.discountPercentage}%</Text>
+                    <Text style={styles.price}>{t("product.price")}{product?.price}</Text>
+                </View>
+                <CustomButton onPress={()=> product && onBuy(product)} text={t("productList.buyButtonText")} containerStyle={styles.buyBottom} />
+            </ScrollView>
+        </View>
+    )
+};

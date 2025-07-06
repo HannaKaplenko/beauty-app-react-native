@@ -29,6 +29,7 @@ export const StackNavigation = () => {
       <Stack.Screen name="LanguageView" component={LanguageView} options={{ title: t("language.title") }} />
       <Stack.Screen name="WishListView" component={WishListView} options={{ title: t("settings.wishList") }} />
       <Stack.Screen name="SettingsView" component={SettingsView} options={{ title: t("settings.settings") }} />
+      <Stack.Screen name="CartView" component={CartView} options={{ title: t("cart.title") }} />
       <Stack.Screen name="AboutUsView" component={AboutUsView} options={{ title: t("settings.aboutUs") }} />
       <Stack.Screen name="ForgotPasswordView" component={ForgotPasswordView} options={{ title: t("forgotPassword.title") }} />
     </Stack.Navigator>

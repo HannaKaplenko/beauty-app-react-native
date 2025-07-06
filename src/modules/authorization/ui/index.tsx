@@ -47,15 +47,9 @@ export const AuthorizationView = () => {
                             placeholder="Введіть пароль"
                             secureTextEntry={!showPassword}
                             style={styles.inputPassword} />
-<<<<<<< HEAD
                         <TouchableOpacity style={styles.eyeButton} onPressIn={() => setShowPassword(prev => !prev)}>
                             <FastImage source={require("../../../../assets/images/eye.png")} style={styles.imageEye} accessibilityLabel="eye" />
                         </TouchableOpacity>
-=======
-                        <Pressable style={styles.eyeButton} onPressIn={() => setShowPassword(prev => !prev)}>
-                            <FastImage source={require("../../../../assets/images/eye.png")} style={styles.imageEye} accessibilityLabel="eye" />
-                        </Pressable>
->>>>>>> temp-restore
                     </View>
                     {passwordError && <Text style={styles.error}>{passwordError}</Text>}
                     <CheckBox

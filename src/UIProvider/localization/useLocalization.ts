@@ -12,7 +12,7 @@ i18n.translations = { uk, en, ru };
 export const useLocalization = () => {
     const [locale, setLocale] = useState<string>("uk");
 
-    useEffect(() => {                                 
+    useEffect(() => {
         getLanguage();
     }, []);
 

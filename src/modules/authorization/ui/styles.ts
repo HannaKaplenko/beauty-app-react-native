@@ -51,22 +51,14 @@ export const getStyles = (colors: IColors) => StyleSheet.create({
         marginBottom: 10,
     },
     inputWrapper: {
-<<<<<<< HEAD
         flexDirection: "row",
-=======
-        flexDirection: 'row',
->>>>>>> temp-restore
         height: 40,
         borderRadius: 8,
         borderWidth: 1,
         color: colors.text,
         paddingHorizontal: 8,
         marginVertical: 12,
-<<<<<<< HEAD
         alignItems: "center",
-=======
-        alignItems: 'center',
->>>>>>> temp-restore
     },
     inputPassword: {
         flex: 1,
@@ -75,17 +67,10 @@ export const getStyles = (colors: IColors) => StyleSheet.create({
         paddingHorizontal: 8,
     },
     eyeButton: {
-<<<<<<< HEAD
         height: 40,
         width: 40,
         justifyContent: "center",
         alignItems: "center",
-=======
-        height: 38,
-        width: 38,
-        justifyContent: 'center',
-        alignItems: 'center',
->>>>>>> temp-restore
     },
     imageEye: {
         height: 16,

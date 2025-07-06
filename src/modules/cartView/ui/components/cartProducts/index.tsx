@@ -7,7 +7,7 @@ import { IProduct } from "../../../../../entities/product/iProduct";
 import { CartStore } from "../../../../../entities/cart/CartModel";
 
 export const CartProducts = () => {
-    const { colors } = useUIContext();
+    const { colors, t } = useUIContext();
     const styles = getStyles(colors);
     const { cart, updateProduct, removeProducts } = CartStore();
 
@@ -27,6 +27,14 @@ export const CartProducts = () => {
         if (oldItem && oldItem.quantity > 1) {
             updateProduct(oldItem?.product, oldItem.quantity - 1);
         }
+    }
+
+    if (cart.items.length === 0) {
+        return (
+            <View style={styles.emptyContainer}>
+                <Text style={styles.emptyText}>{t("cart.message")}</Text>
+            </View>
+        );
     }
 
     return (
@@ -58,7 +66,7 @@ export const CartProducts = () => {
                     </View>
                 </View>
             ))
-    )
+    );
 };
 
 

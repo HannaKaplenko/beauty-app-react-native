@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { } from "react";
 import { View } from "react-native";
 import { useUIContext } from "../../../UIProvider";
 import { getStyles } from "./styles";
-import { GiftedChat, IMessage } from "react-native-gifted-chat";
+import { GiftedChat } from 'react-native-gifted-chat';
 import { userStore } from "../../../entities/user/UserModel";
 import { useChat } from "../presenters/useChat";
 
