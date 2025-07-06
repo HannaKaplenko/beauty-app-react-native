@@ -38,34 +38,34 @@ export const CartProducts = () => {
     }
 
     return (
-            cart.items.map(({ product, quantity }) => (
-                <View style={styles.item} key={product.id}>
-                    <View style={styles.imageContainer}>
-                        <FastImage source={{ uri: product.images[0] }} style={styles.image} />
+        cart.items.map(({ product, quantity }) => (
+            <View style={styles.item} key={product.id}>
+                <View style={styles.imageContainer}>
+                    <FastImage source={{ uri: product.images[0] }} style={styles.image} />
+                </View>
+                <View style={styles.content}>
+                    <View style={styles.header}>
+                        <Text style={styles.title}>{product.title}</Text>
+                        <TouchableOpacity style={styles.countButton} onPress={() => { onRemove(product) }}>
+                            <Text style={styles.buttonText}>x</Text>
+                        </TouchableOpacity>
                     </View>
-                    <View style={styles.content}>
-                        <View style={styles.header}>
-                            <Text style={styles.title}>{product.title}</Text>
-                            <TouchableOpacity style={styles.countButton} onPress={() => { onRemove(product) }}>
-                                <Text style={styles.buttonText}>x</Text>
+                    <Text style={styles.description} numberOfLines={2}>{product.description}</Text>
+                    <View style={styles.footer}>
+                        <Text style={styles.price}>{product.price}</Text>
+                        <View style={styles.label}>
+                            <TouchableOpacity style={styles.countButton} onPress={() => { onIncrement(product) }}>
+                                <Text style={styles.buttonText}>+</Text>
                             </TouchableOpacity>
-                        </View>
-                        <Text style={styles.description} numberOfLines={2}>{product.description}</Text>
-                        <View style={styles.footer}>
-                            <Text style={styles.price}>{product.price}</Text>
-                            <View style={styles.label}>
-                                <TouchableOpacity style={styles.countButton} onPress={() => { onIncrement(product) }}>
-                                    <Text style={styles.buttonText}>+</Text>
-                                </TouchableOpacity>
-                                <Text style={styles.quantity}>{quantity}</Text>
-                                <TouchableOpacity style={styles.countButton} onPress={() => { onDecrease(product) }}>
-                                    <Text style={styles.buttonText}>-</Text>
-                                </TouchableOpacity>
-                            </View>
+                            <Text style={styles.quantity}>{quantity}</Text>
+                            <TouchableOpacity style={styles.countButton} onPress={() => { onDecrease(product) }}>
+                                <Text style={styles.buttonText}>-</Text>
+                            </TouchableOpacity>
                         </View>
                     </View>
                 </View>
-            ))
+            </View>
+        ))
     );
 };
 

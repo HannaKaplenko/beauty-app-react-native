@@ -96,9 +96,5 @@ export const getStyles = (colors: IColors) => StyleSheet.create({
         fontSize: 18,
         color: "#999",
         textAlign: "center",
-    },
-    listContainer: {
-        flex: 1,
-        padding: 16,
-    },
+    }
 })
