@@ -6,6 +6,9 @@
         "ru": "Русский",
         "save": "Save"
     },
+    "theme": {
+        "title": "Here you can choose the color theme."
+    },
     "settings": {
         "title": "Your profile settings",
         "language": "Language",

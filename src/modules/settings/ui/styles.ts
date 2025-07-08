@@ -9,4 +9,21 @@ export const getStyles = (colors: IColors) => StyleSheet.create({
         alignItems: "center",
         justifyContent: "center",
     },
+    title: {
+        color: colors.text,
+        fontWeight: 500,
+        fontSize: 24,
+        lineHeight: 32,
+    },
+    button: {
+        marginHorizontal: 32,
+    },
+    message: {
+        color: colors.text,
+        textAlign: "center",
+        fontWeight: 'bold',
+        fontSize: 20,
+        lineHeight: 24,
+        margin: 10,
+    },
 })
