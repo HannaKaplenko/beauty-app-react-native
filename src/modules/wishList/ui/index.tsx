@@ -1,7 +1,9 @@
 import React from "react";
-import { getStyles } from "./styles";
 import { View } from "react-native";
 import { useUIContext } from "../../../UIProvider";
+import { getStyles } from "./styles";
+import { ScrollView } from "react-native-gesture-handler";
+import { WishListProducts } from "./components/wishListProducts";
 
 
 export const WishListView = () => {
@@ -10,6 +12,11 @@ export const WishListView = () => {
 
     return (
         <View style={styles.container}>
-        </View>
+            <ScrollView style={{ flex: 1 }}>
+                <WishListProducts />
+            </ScrollView >
+        </View >
     )
 };
+
+

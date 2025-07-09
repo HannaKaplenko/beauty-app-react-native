@@ -8,6 +8,8 @@ import { StackNavigationProp } from '@react-navigation/stack';
 import { IProduct } from '../../../../../entities/product/iProduct';
 import { CustomButton } from '../../../../../UIKit/CustomButton';
 import { CartStore } from '../../../../../entities/cart/CartModel';
+import { WishListIconThin } from '../../../../../../assets/icons/WishListIconThin';
+import { wishListStore } from '../../../../../entities/wishList/WishListModel';
 
 interface IProps {
     item: IProduct
@@ -18,6 +20,7 @@ export const ProductListItem = ({ item }: IProps) => {
     const styles = getStyles(colors);
     const navigation = useNavigation<StackNavigationProp<any>>();
     const { updateProduct, cart } = CartStore();
+    const { updateProduct: updateWishListProduct } = wishListStore.getState();
 
     const onPress = () => {
         navigation.navigate('ProductView', { id: item.id })
@@ -25,12 +28,21 @@ export const ProductListItem = ({ item }: IProps) => {
 
     const onBuy = () => {
         const oldItem = cart.items.find(({ product }) => product.id === item.id);
-        const newQuantity = oldItem ? oldItem.quantity+1 : 1;
+        const newQuantity = oldItem ? oldItem.quantity + 1 : 1;
         updateProduct(item, newQuantity);
     }
 
+    const onAdd = (item: IProduct) => {
+        updateWishListProduct(item, 1);
+        navigation.navigate("TabNavigation", { screen: "ProfileView", params: { openWishList: true } }, { pop: true });
+    }
     return (
         <TouchableOpacity onPress={onPress} style={styles.container}>
+            <TouchableOpacity
+                onPress={() => onAdd(item)}
+                style={styles.wishIconWrapper}>
+                <WishListIconThin/>
+            </TouchableOpacity>
             <View style={styles.imageContainer}>
                 <FastImage source={{ uri: item.images[0] }} style={styles.image} />
             </View>

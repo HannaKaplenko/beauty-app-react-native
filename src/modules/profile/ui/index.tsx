@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { getStyles } from './styles';
-import { Text, TouchableOpacity, View } from 'react-native';
+import { Text, View } from 'react-native';
 import { useProfile } from '../presenters/useProfile';
 import { userStore } from '../../../entities/user/UserModel';
 import { ProfileRow } from './components/profileRow';
@@ -9,7 +9,7 @@ import { LanguageIcon } from '../../../../assets/icons/LanguageIcon';
 import { WishListIcon } from '../../../../assets/icons/WishListIcon';
 import { AboutUsIcon } from '../../../../assets/icons/AboutUsIcon';
 import { SettingsIcon } from '../../../../assets/icons/SettingsIcon';
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation, useRoute, RouteProp } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { useUIContext } from '../../../UIProvider';
 import { CustomButton } from '../../../UIKit/CustomButton';
@@ -37,7 +37,7 @@ export const ProfileView = () => {
             <ProfileRow title={t("settings.settings")} icon={<SettingsIcon />} onPress={onGoToChangeSettings} />
             <ProfileRow title={t("settings.aboutUs")} icon={<AboutUsIcon />} onPress={onGoToChangeAboutUs} />
             <Text style={styles.message}> {t("settings.leaveProfileMessage")}</Text>
-            <CustomButton text={t("settings.buttonText")} onPress={logout} containerStyle={styles.button}/>
+            <CustomButton text={t("settings.buttonText")} onPress={logout} containerStyle={styles.button} />
         </View>
     );
 };

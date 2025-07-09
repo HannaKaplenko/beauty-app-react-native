@@ -17,10 +17,19 @@ export const getStyles = (colors: IColors) => StyleSheet.create({
         backgroundColor: '#EAEAEA',
         justifyContent: 'center',
         alignItems: 'center',
+        position: 'relative',
     },
     image: {
         width: 100,
         height: 100,
+    },
+    wishIconWrapper: {
+        flexDirection: "row",
+        top: 6,
+        right: 6,
+        padding: 4,
+        borderRadius: 16,
+        zIndex: 1,
     },
     content: {
         justifyContent: 'center',

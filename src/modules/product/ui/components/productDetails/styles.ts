@@ -16,6 +16,7 @@ export const getStyles = (colors: IColors) => StyleSheet.create({
     contentContainerStyle: {
         paddingBottom: 20,
     },
+    
     image: {
         width: "100%",
         height: 400,

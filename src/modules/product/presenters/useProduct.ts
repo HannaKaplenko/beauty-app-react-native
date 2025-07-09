@@ -5,7 +5,6 @@ import { IProduct } from "../../../entities/product/iProduct";
 export const useProduct = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [product, setProduct] = useState<IProduct | null>(null);
-    const navigation = useNavigation<any>();
     const { id } = useRoute<any>().params || {};
 
     useEffect(() => {
@@ -19,5 +18,5 @@ export const useProduct = () => {
         setProduct(data);
         setIsLoading(false);
     };
-    return { product, isLoading, navigation }
+    return { product, isLoading }
 }

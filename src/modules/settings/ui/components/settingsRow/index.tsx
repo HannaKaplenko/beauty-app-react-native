@@ -1,15 +1,15 @@
-import React, { FC, useMemo } from "react";
-import { styles } from "./styles"
-import { Text, TouchableOpacity, View } from "react-native";
+import React, { FC } from "react";
+import { styles } from "./styles";
+import { Text, TouchableOpacity, View } from "react-native"
 import { Chevron } from "../../../../../../assets/icons/Chevron";
 
 interface IProps {
     title: string;
-    icon?: React.ReactNode;
+    icon: React.ReactNode;
     onPress: () => void;
 }
 
-export const DeliveryRow: FC<IProps> = ({ title, icon, onPress }) => {
+export const SettingsRow: FC<IProps> = ({ title, icon, onPress }) => {
 
     return (
         <TouchableOpacity style={styles.container} onPress={onPress}>

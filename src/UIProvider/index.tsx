@@ -35,4 +35,4 @@ export const UIProvider: FC<IProps> = ({ children }) => {
     };
 
     return <UIContext.Provider value={value}>{children}</UIContext.Provider>
-}
+} 

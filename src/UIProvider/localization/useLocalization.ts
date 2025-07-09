@@ -27,7 +27,7 @@ export const useLocalization = () => {
         return Object.keys(i18n.translations);
     }, []);
 
-    const onHandleChangeLocale = async (newLanguage: "uk" | "en" | "ru") => {
+    const onHandleChangeLocale = async (newLanguage: "uk" | "en" | "ru" | string) => {
         setLocale(newLanguage);
         storage.setItem("LANGUAGE", newLanguage);
     };
