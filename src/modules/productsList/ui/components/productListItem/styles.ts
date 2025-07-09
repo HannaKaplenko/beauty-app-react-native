@@ -37,10 +37,16 @@ export const getStyles = (colors: IColors) => StyleSheet.create({
         marginLeft: 8,
         gap: 6,
     },
+    iconPosition: {
+        flexDirection: "row",
+        justifyContent: 'space-between',
+        paddingHorizontal: 4,
+    },
     title: {
         fontSize: 16,
         lineHeight: 20,
         fontWeight: '700',
+        margin: 8,
     },
     description: {
         lineHeight: 20,

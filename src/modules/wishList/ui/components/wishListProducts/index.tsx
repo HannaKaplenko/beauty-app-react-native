@@ -19,7 +19,7 @@ export const WishListProducts = () => {
     if (wishList.items.length === 0) {
         return (
             <View style={styles.emptyContainer}>
-                <Text style={styles.emptyText}>Your WishList is empty</Text>
+                <Text style={styles.emptyText}>{t("wishList.emptyWIshListMessage")}</Text>
             </View>
         );
     }

@@ -34,20 +34,22 @@ export const ProductListItem = ({ item }: IProps) => {
 
     const onAdd = (item: IProduct) => {
         updateWishListProduct(item, 1);
-        navigation.navigate("TabNavigation", { screen: "ProfileView", params: { openWishList: true } }, { pop: true });
+        navigation.navigate("WishListView", { pop: true });
     }
     return (
         <TouchableOpacity onPress={onPress} style={styles.container}>
-            <TouchableOpacity
-                onPress={() => onAdd(item)}
-                style={styles.wishIconWrapper}>
-                <WishListIconThin/>
-            </TouchableOpacity>
             <View style={styles.imageContainer}>
                 <FastImage source={{ uri: item.images[0] }} style={styles.image} />
             </View>
             <View style={styles.content}>
-                <Text style={styles.title}>{item.title}</Text>
+                <View style={styles.iconPosition}>
+                    <Text style={styles.title}>{item.title}</Text>
+                    <TouchableOpacity
+                        onPress={() => onAdd(item)}
+                        style={styles.wishIconWrapper}>
+                        <WishListIconThin />
+                    </TouchableOpacity>
+                </View>
                 <Text style={styles.description} numberOfLines={2}>{item.description}</Text>
                 <View style={styles.footer}>
                     <Text style={styles.price}>{item.price}</Text>

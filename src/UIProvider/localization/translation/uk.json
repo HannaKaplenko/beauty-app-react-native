@@ -67,5 +67,8 @@
     },
     "chatView": {
         "greetingMessage": "Вітаємо,"
+    },
+    "wishList": {
+        "emptyWIshListMessage": "Ваш список бажань пустий."
     }
 }

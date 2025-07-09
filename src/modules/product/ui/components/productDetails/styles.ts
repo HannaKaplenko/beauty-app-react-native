@@ -16,11 +16,17 @@ export const getStyles = (colors: IColors) => StyleSheet.create({
     contentContainerStyle: {
         paddingBottom: 20,
     },
-    
+
     image: {
         width: "100%",
         height: 400,
         backgroundColor: colors.background,
+    },
+    iconPosition: {
+        flexDirection: "row",
+        justifyContent: "space-between",
+        paddingHorizontal: 4,
+        paddingVertical: 8
     },
     label: {
         color: colors.text,
@@ -36,6 +42,7 @@ export const getStyles = (colors: IColors) => StyleSheet.create({
         fontSize: 24,
         lineHeight: 28,
         marginVertical: 10,
+        textAlign: "center",
     },
     description: {
         color: colors.text,

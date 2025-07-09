@@ -33,13 +33,17 @@ export const ProductDetails = () => {
 
     return (
         <View style={styles.container}>
-
             <ScrollView style={styles.scroll} contentContainerStyle={styles.contentContainerStyle}>
-                <WishListIconThin/>
-
-                
                 <FastImage source={{ uri: product?.images[0] }} style={styles.image} />
-                <Text style={styles.label}>{product?.title}:</Text>
+                <View style={styles.iconPosition}>
+                    <Text style={styles.label}>{product?.title}:</Text>
+                    <TouchableOpacity
+                        onPress={() => {
+                            if (product) onAdd(product);
+                        }}>
+                        <WishListIconThin />
+                    </TouchableOpacity>
+                </View>
                 <Text style={styles.brand}>{product?.brand}</Text>
                 <Text style={styles.description}>{product?.description}</Text>
                 <Text style={styles.weight}>{t("product.weight")} {product?.weight} ml/g</Text>
