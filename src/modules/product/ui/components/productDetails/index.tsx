@@ -10,7 +10,7 @@ import { CartStore } from "../../../../../entities/cart/CartModel";
 import { IProduct } from "../../../../../entities/product/iProduct";
 import { useNavigation } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
-import { wishListStore } from "../../../../../entities/wishList/WishListModel";
+import { WishListStore } from "../../../../../entities/wishList/WishListModel";
 import { WishListIconThin } from "../../../../../../assets/icons/WishListIconThin";
 
 export const ProductDetails = () => {
@@ -19,7 +19,7 @@ export const ProductDetails = () => {
     const { product, isLoading } = useProduct();
     const navigation = useNavigation<StackNavigationProp<any>>();
     const { updateProduct } = CartStore();
-    const { updateProduct: updateWishListProduct } = wishListStore.getState();
+    const { addProduct: updateWishListProduct } = WishListStore();
 
     const onBuy = (item: IProduct) => {
         updateProduct(item, 1);
@@ -27,7 +27,7 @@ export const ProductDetails = () => {
     }
 
     const onAdd = (item: IProduct) => {
-        updateWishListProduct(item, 1);
+        updateWishListProduct(item);
         navigation.navigate("TabNavigation", { screen: "ProfileView", params: { openWishList: true } }, { pop: true });
     }
 

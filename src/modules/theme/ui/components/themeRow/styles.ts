@@ -15,7 +15,6 @@ export const getStyles = (colors: IColors) => StyleSheet.create({
     titleContainer: {
         flex: 1,
         marginLeft: 16,
-        color: colors.text,
     },
     title: {
         fontSize: 16,

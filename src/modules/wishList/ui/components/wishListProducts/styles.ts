@@ -51,28 +51,9 @@ export const getStyles = (colors: IColors) => StyleSheet.create({
         lineHeight: 22,
         fontWeight: '700',
     },
-    buttonBuy: {
-        height: 28,
-        paddingHorizontal: 32,
-    },
-    label: {
-        paddingHorizontal: 24,
-        backgroundColor: colors.button,
-        paddingVertical: 4,
-        borderRadius: 8,
-        flexDirection: "row",
-        gap: 12,
-    },
     header: {
         flexDirection: "row",
         justifyContent: "space-between"
-    },
-    quantity: {
-        fontSize: 16,
-        lineHeight: 18,
-        fontWeight: '500',
-        width: 20,
-        textAlign: "center"
     },
     buttonText: {
         fontWeight: "700",

@@ -1,34 +1,24 @@
 import { create } from 'zustand'
 import { IProduct } from '../product/iProduct'
-import { IWishList } from './iWishList';
 
 interface IWIshListStore {
-    wishList: IWishList,
-    updateProduct: (product: IProduct, quantity: number) => void;
+    wishList: IProduct[],
+    addProduct: (product: IProduct) => void;
     removeProducts: (productId: number) => void;
     clear: () => void;
 }
 
-export const wishListStore = create<IWIshListStore>((set) => ({
-    wishList: { items: [] },
-    updateProduct: (product: IProduct, quantity: number) => set((state) => {
-        const itemIndex = state.wishList.items.findIndex(item => item.product.id === product.id);
-        if (itemIndex !== -1) {
-            const updatedItems = [...state.wishList.items];
-            updatedItems[itemIndex].quantity = quantity;
-            return { wishList: { items: updatedItems } };
-        } else {
-            return { wishList: { items: [...state.wishList.items, { product, quantity }] } };
-        }
+export const WishListStore = create<IWIshListStore>((set) => ({
+    wishList: [],
+    addProduct: (product: IProduct) => set((state) => {
+        return { wishList: [...state.wishList, product] };
     }),
     removeProducts: (productId: number) => set((state) => ({
-        wishList: {
-            items: state.wishList.items.filter(item => item.product.id !== productId)
-        }
+        wishList: state.wishList.filter(item => item.id !== productId)
     })),
     clear: () => set(() => ({
-        wishList: { items: [] }
+        wishList: []
     }))
-}))
+}));
 
 

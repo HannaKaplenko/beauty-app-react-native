@@ -69,6 +69,6 @@
         "greetingMessage": "Hello,"
     },
     "wishList": {
-        "emptyWIshListMessage": "Your WishList is empty."
+        "emptyWishListMessage": "Your WishList is empty."
     }
 }

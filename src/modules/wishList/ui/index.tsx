@@ -1,20 +1,30 @@
 import React from "react";
-import { View } from "react-native";
+import { Text, View } from "react-native";
 import { useUIContext } from "../../../UIProvider";
 import { getStyles } from "./styles";
-import { ScrollView } from "react-native-gesture-handler";
+import { FlatList } from "react-native-gesture-handler";
 import { WishListProducts } from "./components/wishListProducts";
+import { WishListStore } from "../../../entities/wishList/WishListModel";
 
 
 export const WishListView = () => {
-    const { colors } = useUIContext();
+    const { colors, t } = useUIContext();
     const styles = getStyles(colors);
+    const { wishList, addProduct, removeProducts } = WishListStore();
+
 
     return (
         <View style={styles.container}>
-            <ScrollView style={{ flex: 1 }}>
-                <WishListProducts />
-            </ScrollView >
+            <FlatList data={wishList} renderItem={({ item }) => <WishListProducts item={item} />}
+                keyExtractor={(item) => item.id.toString()}
+                ListEmptyComponent={() => {
+                    return (
+                        <View style={styles.emptyContainer}>
+                            <Text style={styles.emptyText}>{t("wishList.emptyWishListMessage")}</Text>
+                        </View >
+                    );
+                }}
+            />
         </View >
     )
 };

@@ -9,7 +9,7 @@ import { IProduct } from '../../../../../entities/product/iProduct';
 import { CustomButton } from '../../../../../UIKit/CustomButton';
 import { CartStore } from '../../../../../entities/cart/CartModel';
 import { WishListIconThin } from '../../../../../../assets/icons/WishListIconThin';
-import { wishListStore } from '../../../../../entities/wishList/WishListModel';
+import { WishListStore } from '../../../../../entities/wishList/WishListModel';
 
 interface IProps {
     item: IProduct
@@ -20,7 +20,7 @@ export const ProductListItem = ({ item }: IProps) => {
     const styles = getStyles(colors);
     const navigation = useNavigation<StackNavigationProp<any>>();
     const { updateProduct, cart } = CartStore();
-    const { updateProduct: updateWishListProduct } = wishListStore.getState();
+    const { addProduct: updateWishListProduct } = WishListStore.getState();
 
     const onPress = () => {
         navigation.navigate('ProductView', { id: item.id })
@@ -33,7 +33,7 @@ export const ProductListItem = ({ item }: IProps) => {
     }
 
     const onAdd = (item: IProduct) => {
-        updateWishListProduct(item, 1);
+        updateWishListProduct(item);
         navigation.navigate("WishListView", { pop: true });
     }
     return (

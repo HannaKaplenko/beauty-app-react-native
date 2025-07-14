@@ -69,6 +69,6 @@
         "greetingMessage": "Вітаємо,"
     },
     "wishList": {
-        "emptyWIshListMessage": "Ваш список бажань пустий."
+        "emptyWishListMessage": "Ваш список бажань пустий."
     }
 }

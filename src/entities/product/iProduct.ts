@@ -1,4 +1,6 @@
 export interface IProduct {
+    filter(arg0: (item: any) => boolean): IProduct | undefined;
+    findIndex(arg0: (item: any) => boolean): unknown;
     quantity: number;
     id: number;
     title: string;
