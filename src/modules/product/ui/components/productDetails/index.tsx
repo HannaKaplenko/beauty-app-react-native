@@ -19,31 +19,35 @@ export const ProductDetails = () => {
     const { product, isLoading } = useProduct();
     const navigation = useNavigation<StackNavigationProp<any>>();
     const { updateProduct } = CartStore();
-    const { addProduct: updateWishListProduct } = WishListStore();
+    const { addProduct: updateWishListProduct, isFavorite, removeProducts } = WishListStore();
 
     const onBuy = (item: IProduct) => {
         updateProduct(item, 1);
         navigation.navigate("TabNavigation", { screen: "CartView", params: { products: item } }, { pop: true });
     }
 
-    const onAdd = (item: IProduct) => {
-        updateWishListProduct(item);
-        navigation.navigate("TabNavigation", { screen: "ProfileView", params: { openWishList: true } }, { pop: true });
+    const onPressWishList = (item: IProduct) => {
+        if (isFavorite(item.id)) {
+            removeProducts(item.id);
+        } else {
+            updateWishListProduct(item);
+        }
     }
 
     return (
         <View style={styles.container}>
             <ScrollView style={styles.scroll} contentContainerStyle={styles.contentContainerStyle}>
-                <FastImage source={{ uri: product?.images[0] }} style={styles.image} />
-                <View style={styles.iconPosition}>
-                    <Text style={styles.label}>{product?.title}:</Text>
+                <View style={styles.imageWrapper}>
+                    <FastImage source={{ uri: product?.images[0] }} style={styles.image} />
                     <TouchableOpacity
+                        style={styles.wishListIcon}
                         onPress={() => {
-                            if (product) onAdd(product);
+                            if (product) onPressWishList(product);
                         }}>
-                        <WishListIconThin />
+                        <WishListIconThin color={product && isFavorite(product?.id) ? "red" : "grey"} />
                     </TouchableOpacity>
                 </View>
+                <Text style={styles.label}>{product?.title}:</Text>
                 <Text style={styles.brand}>{product?.brand}</Text>
                 <Text style={styles.description}>{product?.description}</Text>
                 <Text style={styles.weight}>{t("product.weight")} {product?.weight} ml/g</Text>

@@ -30,7 +30,6 @@ export const useAuthorization = () => {
         return null;
     }
 
-
     const toggleCheckbox = () => {
         setIsChecked(prev => !prev);
     };

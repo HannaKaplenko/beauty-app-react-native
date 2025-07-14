@@ -16,7 +16,6 @@ export const WishListProducts = ({ item }: IProps) => {
     const styles = getStyles(colors);
     const { removeProducts } = WishListStore();
 
-
     const onRemove = (item: IProduct) => {
         removeProducts(item.id);
     }
@@ -29,14 +28,13 @@ export const WishListProducts = ({ item }: IProps) => {
             <View style={styles.content}>
                 <View style={styles.header}>
                     <Text style={styles.title}>{item.title}</Text>
-                    <TouchableOpacity style={styles.countButton} onPress={() => { onRemove(item) }}>
-                        <Text style={styles.buttonText}>x</Text>
-                    </TouchableOpacity>
                 </View>
                 <Text style={styles.description} numberOfLines={2}>{item.description}</Text>
                 <View style={styles.footer}>
                     <Text style={styles.price}>{item.price}</Text>
-                    <WishListIconThin />
+                    <TouchableOpacity style={styles.wishIcon} onPress={() => { onRemove(item) }}>
+                        <WishListIconThin color="red" />
+                    </TouchableOpacity>
                 </View>
             </View>
         </View>

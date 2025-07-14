@@ -59,13 +59,14 @@ export const getStyles = (colors: IColors) => StyleSheet.create({
         fontWeight: "700",
         textAlign: "center"
     },
-    countButton: {
+    wishIcon: {
         width: 18,
         height: 18,
         borderRadius: 6,
         backgroundColor: "#FFFFFF",
         justifyContent: 'center',
-        textAlign: "center"
+        textAlign: "center",
+        margin: 8
     },
     emptyContainer: {
         flex: 1,

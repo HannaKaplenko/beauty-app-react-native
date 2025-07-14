@@ -10,7 +10,7 @@ const App = () => {
     <UIProvider>
       <View style={{ flex: 1 }}>
         <RootNavigation />
-        <NetInfoStatus/>
+        <NetInfoStatus />
       </View>
     </UIProvider>
   );

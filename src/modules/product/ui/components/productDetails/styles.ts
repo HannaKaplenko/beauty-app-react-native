@@ -16,17 +16,20 @@ export const getStyles = (colors: IColors) => StyleSheet.create({
     contentContainerStyle: {
         paddingBottom: 20,
     },
-
     image: {
         width: "100%",
         height: 400,
         backgroundColor: colors.background,
     },
-    iconPosition: {
-        flexDirection: "row",
-        justifyContent: "space-between",
-        paddingHorizontal: 4,
-        paddingVertical: 8
+    imageWrapper: {
+        position: "relative",
+    },
+    wishListIcon: {
+        position: "absolute",
+        top: 10,
+        right: 10,
+        borderRadius: 20,
+        padding: 6,
     },
     label: {
         color: colors.text,

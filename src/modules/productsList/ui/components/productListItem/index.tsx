@@ -20,7 +20,7 @@ export const ProductListItem = ({ item }: IProps) => {
     const styles = getStyles(colors);
     const navigation = useNavigation<StackNavigationProp<any>>();
     const { updateProduct, cart } = CartStore();
-    const { addProduct: updateWishListProduct } = WishListStore.getState();
+    const { addProduct: updateWishListProduct, isFavorite, removeProducts } = WishListStore();
 
     const onPress = () => {
         navigation.navigate('ProductView', { id: item.id })
@@ -32,10 +32,14 @@ export const ProductListItem = ({ item }: IProps) => {
         updateProduct(item, newQuantity);
     }
 
-    const onAdd = (item: IProduct) => {
-        updateWishListProduct(item);
-        navigation.navigate("WishListView", { pop: true });
+    const onPressWishList = () => {
+        if (isFavorite(item.id)) {
+            removeProducts(item.id);
+        } else {
+            updateWishListProduct(item);
+        }
     }
+
     return (
         <TouchableOpacity onPress={onPress} style={styles.container}>
             <View style={styles.imageContainer}>
@@ -45,9 +49,9 @@ export const ProductListItem = ({ item }: IProps) => {
                 <View style={styles.iconPosition}>
                     <Text style={styles.title}>{item.title}</Text>
                     <TouchableOpacity
-                        onPress={() => onAdd(item)}
+                        onPress= {onPressWishList}
                         style={styles.wishIconWrapper}>
-                        <WishListIconThin />
+                        <WishListIconThin color={isFavorite(item.id) ? "red" : "grey"} />
                     </TouchableOpacity>
                 </View>
                 <Text style={styles.description} numberOfLines={2}>{item.description}</Text>
